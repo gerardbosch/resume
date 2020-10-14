@@ -350,7 +350,7 @@
 %----------------------------------------------------------------------------------------
 
 %\includegraphics[trim= 350 150 0 200, clip ,width=\linewidth]{}  %trimming relative to image size
-\includegraphics[clip, width=\linewidth]{pic-header.jpg}
+\includegraphics[trim=0 0 0 10, clip, width=\linewidth]{pic-header.jpg}
 
 %---------------------------------------------------------------------------------------
 %	INTRODUCTION
@@ -363,8 +363,7 @@
 		\transparent{1}%
 		\begin{center}
 		\larrow{sectcol}\textcolor{white}{
-		  Enthusiast about Functional Programming, software engineering/craftsmanship, clean code, architectural/design
-		  patterns and programming languages theory.
+		  Enthusiast about Functional Programming, software engineering/craftsmanship, clean code, architectural/design patterns and programming languages theory.
 		}
 		\end{center}
 	}
@@ -382,9 +381,9 @@
 %----------------------------------------------------------------------------------------
 \cvsection{Summary}
 
-[ \emph{Read the full detailed CV at} \href{https://github.com/gerardbosch/cv}{https://gerardbosch.github.io/cv} ] \\[-2pt]
+[ \emph{Read the full detailed CV at} \href{https://gerardbosch.github.io/cv}{https://gerardbosch.github.io/cv} ] \\[-2pt]
 
-My background is mostly about designing and implementing backend systems. I have good analysis skills and can break down requirements well and transform that into code. Really concerned about the code itself, its readability and conciseness.
+My background is mostly about designing/implementing backend systems. I have good analysis skills and can break down requirements well and transform that into code. Really concerned about the code itself, its readability and conciseness. Continuous improvement advocate and continuous refactor and code reuse as a mantra. Accidental-complexity fighter. Like learning, love crafting. Proactive and autodidact.
 
 \vspace{12pt}
 
@@ -399,6 +398,7 @@ My background is mostly about designing and implementing backend systems. I have
 
 % New custom commands below :)
 
+\vspace{-1ex}
 \cvposition{2016 - now}{Senior Software Engineer}{GFT IT Consulting}
 
 ~~PROJECT HIGHLIGHTS (most relevant ones):
@@ -415,6 +415,8 @@ My background is mostly about designing and implementing backend systems. I have
   \textit{Bankinter}: \textbf{Microservice Architecture} (2017) -- Development of an architecture based on MsA and Spring, providing the pre-configured components: from security, tracing, audit, error handling to cryptography; enabling developers to easily get started.
 }
 
+\cventry{\textit{Company presentation}: \href{https://gerardbosch.github.io/blockchain-presentation/}{A technical introduction to Blockchain technology}.}
+
 % Example using itemize (more vertical space)
 % \cvevent{2016 - now}{Senior Software Engineer}{GFT IT Consulting}
 %   {\textbf{PROJECT HIGHLIGHTS} (most relevant only)
@@ -430,7 +432,7 @@ My background is mostly about designing and implementing backend systems. I have
 %   }
 
 \cvposition{2014--2016}{Software Engineer}{ICG Software}
-\cventry{Senior developer in charge of mobile solutions for business domains.}\vspace{-8pt}
+\cventry{Senior developer in charge of mobile solutions for business domains.}\vspace{-10pt}
 \cventry{Architecting mobile applications for Android and Windows Phone platforms.}
 
 \cvposition{2011--2013}{Researcher/developer}{AI Research Institute IIIA-CSIC}
@@ -447,13 +449,13 @@ My background is mostly about designing and implementing backend systems. I have
 %---------------------------------------------------------------------------------------
 %	EDUCATION SECTION
 %--------------------------------------------------------------------------------------
-\cvsection{Education}
+\cvsection{Education ~\lowercase{\emph{(to see more, view the CV version)}}}
 
+\vspace{-1em}
 \cvposition{2011}{M.Sc. Open Source Software Eng.}{University of Lleida}\vspace{-2pt}
 \cventry{Master Thesis: \emph{Setting up and deployment of Sauron system for DNS system management at University of Lleida.}}
 \cventry{Mobility program internship in \emph{VIA UC}, Denmark.}
 
-~~\emph{To see more, view the CV version.}
 
 % \cvposition{2010}{Bachelor Computer Science}{University of Lleida}\vspace{-2pt}
 % \cventry{Bachelor Thesis: \emph{Implementation of Golay codes in Sage Math.}}
@@ -472,9 +474,10 @@ My background is mostly about designing and implementing backend systems. I have
 	\icontext{MapMarker}{12}{Barcelona, Spain}{white}\\[5pt]
 	\icontext{MobilePhone}{12}{+34 680 271 551}{white}\\[5pt]
 	\iconemail{Envelope}{12}{gerard.bosch@gmail.com}{gerard.bosch@gmail.com}{white} \\[5pt]
+	\iconhref{Linkedin}{12}{linkedin.com/in/gerard-bosch}{https://www.linkedin.com/in/gerard-bosch}{white} \\[5pt]
 	%\iconhref{MousePointer}{12}{Webpage}{Webpage}{white} \\[5pt]
-	\iconhref{Github}{12}{https://github.com/gerardbosch}{https://github.com/gerardbosch}{white} \\[5pt]
-	\iconhref{StackOverflow}{12}{https://stackoverflow.com/gerard-bosch}{https://stackoverflow.com/gerard-bosch}{white} \\[5pt]
+	\iconhref{Github}{12}{github.com/gerardbosch}{https://github.com/gerardbosch}{white} \\[5pt]
+	%\iconhref{StackOverflow}{12}{stackoverflow.com/users/6108874/gerard-bosch}{https://stackoverflow.com/users/6108874/gerard-bosch}{white} \\[5pt]
 	%\iconhref{Twitter}{12}{@user}{https://twitter.com/user}{white} \\[5pt]
 
 \end{metasection}
@@ -485,22 +488,22 @@ My background is mostly about designing and implementing backend systems. I have
 \begin{tabular}{rl}
 
 Java 15 &
-\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol} \\[5pt]
+\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol} \\[2pt]
 
 Scala &
-\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white} \\[5pt]
+\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white} \\[2pt]
 
 Kotlin &
-\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white}\icon{Star}{12}{white} \\[5pt]
+\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white}\icon{Star}{12}{white} \\[2pt]
 
 Bash &
-\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white} \\[5pt]
+\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white} \\[2pt]
 
 Haskell &
-\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white}\icon{Star}{12}{white} \\[5pt]
+\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white}\icon{Star}{12}{white} \\[2pt]
 
 Python &
-\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white}\icon{Star}{12}{white} \\[5pt]
+\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white}\icon{Star}{12}{white} \\[2pt]
 
 Perl &
 \icon{Star}{12}{complcol}\icon{Star}{12}{white}\icon{Star}{12}{white}\icon{Star}{12}{white}\icon{Star}{12}{white}
@@ -531,8 +534,9 @@ Perl &
 \vspace{-0.3cm}
 \begin{metasection}{Tools}
 
-\icontext{Code}{12}{IntelliJ}{white} \icontext{CodeFork}{12}{Git (sure!)}{white}
-\icontext{Terminal}{12}{ZSH}{white}
+\icontext{Code}{12}{IntelliJ}{white} \icontext{CodeFork}{12}{Git}{white}
+\icontext{Terminal}{12}{ZSH}{white} \\[5pt]
+\icontext{Commenting}{12}{Codestream}{white}
 
 \end{metasection}
 
@@ -634,6 +638,8 @@ Perl &
   \mystrut \small \textcolor{white}{
     \LaTeX~source of this \textit{résumé} is available at
     \iconhref{Github}{12}{https://github.com/gerardbosch/resume}{https://github.com/gerardbosch/resume}{white}
+    ~$\cdot$~
+    Last updated: \today
   }
 }}
 

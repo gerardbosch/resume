@@ -3,7 +3,7 @@
 *.iml
 
 # output pdf
-main.pdf
+#main.pdf  # do not ignore it or the GitHub action JamesIves/github-pages-deploy-action@3.6.2 will ignore it too
 
 # out folder
 out

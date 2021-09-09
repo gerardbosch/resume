@@ -1,4 +1,4 @@
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%--------------------------------------------------------------------------------------------------%
 %	The MIT License (MIT)
 %
 %	Copyright (c) 2015 Jan Küster
@@ -19,7 +19,7 @@
 %	THE SOFTWARE.
 %
 %
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%--------------------------------------------------------------------------------------------------%
 
 
 %============================================================================
@@ -29,7 +29,7 @@
 %============================================================================
 
 % Use article class to fully customize the page (do not use use a CV template)
-\documentclass[10pt,A4]{article}
+\documentclass[10pt,A4,x11names]{article}
 
 \usepackage[utf8]{inputenc}
 
@@ -52,10 +52,10 @@
 
 % set font default
 \renewcommand*\familydefault{\sfdefault}
-\usepackage[T1]{fontenc}
 
 \usepackage{moresize}     % more font size definitions
 \usepackage{fontawesome}
+\usepackage{emoji}
 \usepackage{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -69,7 +69,7 @@
 \usepackage[a4paper]{geometry}
 
 % for example, change the margins to 2 inches all round
-\geometry{top=1cm, bottom=-.6cm, left=0.4cm, right=1cm}
+\geometry{top=0.8cm, bottom=-.6cm, left=0.4cm, right=1cm}
 
 % less space between header and content
 \setlength{\headheight}{-5pt}
@@ -135,23 +135,64 @@
 %----------------------------------------------------------------------------------------
 
 \usepackage{transparent}
-\usepackage{color}
+\usepackage{xcolor}
 
 % Accent color
 \definecolor{complcol}{RGB}{250,150,10}
 
-% Dark background color
-\definecolor{bgcol}{RGB}{110,110,110}
-
-% Light background / Accent color
+% Light background
 \definecolor{softcol}{RGB}{225,225,225}
-\definecolor{sectcol}{RGB}{0,120,150}
 
-% Other colors
+% Custom colors
 \definecolor{pastelblue}{HTML}{0395DE}
+\definecolor{customblue1}{HTML}{428bca}
+
+\definecolor{scala2blue}{HTML}{e45c77}
+\definecolor{scala3rose}{HTML}{5cc6e4}
+% From the \lambda Haskell logo (L to R): 453a62 5e5086 8f4e8b <- purples,  3f3f3f <- gray
+\definecolor{haskell1}{HTML}{453a62}
+\definecolor{haskell2}{HTML}{5e5086}
+\definecolor{haskell3}{HTML}{8f4e8b}
+\definecolor{haskell4}{HTML}{3f3f3f}
+
+\definecolor{haskellweb1}{HTML}{3d1f54}
+\definecolor{haskell2custom1}{HTML}{5a4b82}
+\definecolor{haskell2custom2}{HTML}{5b4796}
+
+% --vvv-- Color schemes --vvv--
+
+% Bright brown/blue
+% \colorlet{bgcol}{Sienna3}
+% \colorlet{sectcol}{DodgerBlue1}
+% \colorlet{sidecolor}{DodgerBlue3}
+% \colorlet{introcolor}{bgcol}
+
+% Pale gray/blue
+% \colorlet{bgcol}{Ivory4}
+% \colorlet{sectcol}{customblue1}
+% \colorlet{sidecolor}{sectcol}
+% \colorlet{introcolor}{bgcol}
+
+% Scala2/3 schema (like)
+% \colorlet{bgcol}{scala3rose}
+% \colorlet{sectcol}{scala2blue}
+% \colorlet{sidecolor}{scala2blue}
+% \colorlet{introcolor}{bgcol}
+
+% Haskell schema
+\colorlet{bgcol}{haskellweb1}
+\colorlet{sectcol}{haskell2custom1}
+\colorlet{sidecolor}{haskell4}
+\colorlet{introcolor}{haskell3}
 
 % Package for links, must be the last package used
-\usepackage[colorlinks]{hyperref}
+\usepackage[
+  colorlinks = true,
+%   linkcolor = blue,
+%   urlcolor = blue,
+%   citecolor = blue,
+%   anchorcolor = blue,
+]{hyperref}
 
 %============================================================================%
 %
@@ -181,7 +222,7 @@
  \end{tikzpicture}
 }
 
-% a six pointed arrow poiting to the right
+% a six pointed arrow pointing to the right
 \newcommand{\tzrarrow}{ (0,0.2) -- (0.1,0) -- (0.3,0) -- (0.2,0.2) -- (0.3,0.4) -- (0.1,0.4) -- cycle;}
 
 % include the right arrow into a tikz picture
@@ -202,7 +243,7 @@
 %
 \newcommand{\cvsection}[1]{
   \colorbox{sectcol}{\mystrut \makebox[1\mpwidth][l]{
-  \larrow{bgcol} \hspace{-8pt} \larrow{bgcol} \hspace{-8pt} \larrow{bgcol} \textbf{\textcolor{white}{\uppercase{#1}}}\hspace{4pt}
+  \larrow{introcolor!70!white} \hspace{-8pt} \larrow{introcolor!40!white} \hspace{-8pt} \larrow{introcolor!10!white} \textbf{\textcolor{white}{\uppercase{#1}}}\hspace{4pt}
   }}\\
 }
 
@@ -226,23 +267,22 @@
 % arg2: position
 % arg3: company
 \newcommand{\cvposition}[3]{
-  \vspace{8pt}
   \begin{tabular*}{1\mpwidth}{p{0.45\mpwidth}  x{0.52\mpwidth}}
-    \textcolor{black}{\textbf{#2}} & \textcolor{complcol}{#3}, \textcolor{bgcol}{#1}
+    \textcolor{black}{\textbf{#2}} & \textcolor{complcol}{#3}, \textcolor{gray}{#1}
   \end{tabular*}
-  \textcolor{softcol}{\hrule}\vspace{6pt}
+  \textcolor{softcol}{\hrule}
+  \vspace{6pt}
 }
 
 \newcommand{\cventry}[1]{
-  \vspace{6pt}
-%   \par
   \begin{minipage}[t]{0.04\mpwidth}
     \hspace{3pt}\larrow{softcol}
   \end{minipage}
   \begin{minipage}[t]{0.97\mpwidth}
-    #1
+    #1\\[-5pt]
   \end{minipage}
-  \par
+  %\par
+  %\vspace{5pt}
 }
 
 % creates a stretched box as cv entry headline followed by two paragraphs about
@@ -322,6 +362,32 @@
     \vcenteredhbox{\icon{#1}{#2}{#5}} \href{mailto:#4}{\textcolor{#5}{#3}}
 }
 
+%----------------------------------------------------------------------------------
+%  Fork me on GitHub
+%----------------------------------------------------------------------------------
+
+\usepackage{tikz}
+\usepackage{ifthen}
+\usepackage{xcolor}
+\usetikzlibrary{shadows.blur}
+
+\definecolor{forkmebg}{HTML}{3873b3}
+\definecolor{forkmefg}{HTML}{eeeeee}
+
+% rotate and shift are hardcoded here because of the href workaround, see also https://gist.github.com/dokenzy/fe8967c8a5921191a261
+\newcommand{\forkme}{
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[rotate=-50, shift={(-1.7cm, -1.7cm)}] at (current page.north east) {
+      \begin{tikzpicture}[remember picture, overlay]
+        \node[fill=forkmebg, text centered, minimum width=50em, minimum height=2.3em, blur shadow, shadow yshift=0pt, shadow xshift=0pt, shadow blur radius=.4em, shadow opacity=50](fmogh) at (0pt, 0pt) {}; % workaround: text/link see below
+        \draw[forkmefg!60, dashed, line width=.08em, dash pattern=on .5em off 1.5\pgflinewidth] (-25em,0.9em) rectangle (25em,-0.9em);
+      \end{tikzpicture}
+    };
+    % workaround: the link needs to be defined using a \rotatebox{deg} because \node[rotate=deg]{\href} isn't rendered correctly
+    \node[shift={(-1.10cm, -1.35cm)}, text centered, minimum width=50em, minimum height=3.0em, text=forkmefg](fmogh) at (current page.north east) {\fontfamily{phv}\selectfont\bfseries \href{https://github.com/gerardbosch/resume}{\rotatebox{-50}{\color{white}{\small Fork me on GitHub}}} };
+  \end{tikzpicture}
+}
+
 %============================================================================
 %
 %	DOCUMENT CONTENT
@@ -331,6 +397,7 @@
 \begin{document}
 \fcolorbox{white}{white}{\begin{minipage}[c][0.95\textheight][t]{0.69\linewidth}
 
+
 %---------------------------------------------------------------------------------------
 %	TITLE HEADLINE
 %----------------------------------------------------------------------------------------
@@ -338,7 +405,7 @@
 \vspace{-3pt}
 \colorbox{bgcol}{\makebox[\mpwidth][c]{
   \hspace{46pt}\HUGE{\textcolor{white}{\uppercase{Gerard Bosch}} }
-  \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}}
+  \textcolor{introcolor}{\rule[-1mm]{1mm}{0.9cm}}
   \parbox[b]{5cm}{
     \large{\textcolor{white}{{Software Engineer}}} \\
     \large{\textcolor{white}{{Craftsman}}}
@@ -346,19 +413,19 @@
 }}
 
 %----------------------------------------------------------------------------------------
-%	HEADER IMAGE
+%	HEADER IMAGE / BANNER
 %----------------------------------------------------------------------------------------
 
-%\includegraphics[trim= 350 150 0 200, clip ,width=\linewidth]{}  %trimming relative to image size
-\includegraphics[trim=0 0 0 10, clip, width=\linewidth]{pic-header.jpg}
+% \includegraphics[trim=0 30 0 10, clip, width=\linewidth]{header-mountain.jpg} % Galicia
+\includegraphics[trim=20 25 0 98, clip, width=1.3\linewidth]{header-flatiron.jpg} % Flatiron NY
 
 %---------------------------------------------------------------------------------------
 %	INTRODUCTION
 %----------------------------------------------------------------------------------------
 \transparent{0.85}%
-\vspace{-130pt}
+\vspace{-100pt}
 \hspace{0.4\linewidth}
-\colorbox{bgcol}{
+\colorbox{introcolor}{
 	\parbox{0.5\linewidth}{
 		\transparent{1}%
 		\begin{center}
@@ -368,7 +435,7 @@
 		\end{center}
 	}
 }
-\vspace{60pt}
+\vspace{28pt}
 
 %============================================================================%
 %
@@ -381,9 +448,9 @@
 %----------------------------------------------------------------------------------------
 \cvsection{Summary}
 
-[ \emph{Read the full detailed CV at} \href{https://gerardbosch.github.io/cv}{https://gerardbosch.github.io/cv} ] \\[-2pt]
+[ \textcolor{gray}{\emph{Read the full detailed CV at}} \href{https://gerardbosch.github.io/cv}{https://gerardbosch.github.io/cv} ] \\[-2pt]
 
-My background is mostly about designing/implementing backend systems. I have good analysis skills and can break down requirements well and transform that into code. Really concerned about the code itself, its readability and conciseness. Continuous improvement advocate and continuous refactor and code reuse as a mantra. Accidental-complexity fighter. Like learning, love crafting. Proactive and autodidact.
+My background is mostly about designing/implementing backend systems and APIs. I have good analysis skills and can break down requirements well and transform that into code. Really concerned about the code itself, its readability, expressiveness and conciseness. Continuous improvement advocate and continuous refactor and code reuse as a mantra. Accidental-complexity fighter. Proactive and self-taught. Like learning~\emoji{smiley}, love crafting \emoji{heart}.
 
 \vspace{12pt}
 
@@ -398,71 +465,70 @@ My background is mostly about designing/implementing backend systems. I have goo
 
 % New custom commands below :)
 
-\vspace{-1ex}
-\cvposition{2016 - now}{Senior Software Engineer}{GFT IT Consulting}
+\textbf{~~Presentations} \\[-2ex] \textcolor{softcol}{\hrule}\vspace{6pt}
+\begin{tabular}{cl}
+    2020 & \href{https://bit.ly/fp-short-intro}{Functional Programming super-short intro} \\
+    2018 & \href{https://gerardbosch.github.io/blockchain-presentation/}{A technical introduction to Blockchain technology} \\
+\end{tabular}\vspace{5pt}
 
-~~PROJECT HIGHLIGHTS (most relevant ones):
+
+\cvposition{2021}{Software Engineer}{N26 Bank}
 
 \cventry{
-  \textit{Banc Sabadell}: \textbf{Middleware Architecture} (2020\ldots) -- Redefine from scratch a whole new framework and development environment based on MsA, Spring Boot, API-First, Event Driven, DDD, Hexagonal and so forth -- \textbf{Role}: Software Engineer.
+  Joined the fees team, which is in charge of designing and operating a new fee platform intended to be the new standardised way of charging company-wide banking fees. That implied not only the creation of a dedicated microservice, also re-purposing and refactoring of existent ones (by DDD/CleanArch), along with APIs, as well as DB migrations.
 }
+\null
+\cventry{
+  Being a bank, testing is one of the most important and cared matters (pyramid testing, contract testing, regression, TDD,\ldots).
+}
+\null
+\cventry{Stack: \textit{Kotlin, Spring Boot, Microservices, EDA, Kafka, REST, Postgres, Datadog, ELK, AWS,\ldots}}
 
+
+\cvposition{2016 - 2021}{Senior Software Engineer}{GFT IT Consulting}
+% ~~PROJECT HIGHLIGHTS (most relevant ones):
+
+\cventry{
+  \textit{Banc Sabadell}: \textbf{Middleware Architecture} (2020--2021) -- Redefine from scratch a whole new framework and development environment based on MsA, Spring Boot, API-First, Event Driven, DDD, Hexagonal and so forth -- \textbf{Role}: Software Engineer.
+}
+\null
 \cventry{
   \textit{Banc Sabadell}: \textbf{PSD2 \& APIfication} (2018--2020) -- Design \& implement the APIs for the European regulatory PSD2 project, leading the first approach to API exposition for the Bank. Define and implement architectural components for the MsA where I was established as the technical lead for the dev team -- \textbf{Role}: Tech Lead.
 }
-
+\null
 \cventry{
   \textit{Bankinter}: \textbf{Microservice Architecture} (2017) -- Development of an architecture based on MsA and Spring, providing the pre-configured components: from security, tracing, audit, error handling to cryptography; enabling developers to easily get started.
 }
 
-\cventry{\textit{Company presentation}: \href{https://gerardbosch.github.io/blockchain-presentation/}{A technical introduction to Blockchain technology}.}
-
-% Example using itemize (more vertical space)
-% \cvevent{2016 - now}{Senior Software Engineer}{GFT IT Consulting}
-%   {\textbf{PROJECT HIGHLIGHTS} (most relevant only)
-%   \begin{itemize}
-%      \item \textit{Banc Sabadell}: \textbf{Middleware Architecture} (2020\ldots) -- Redefine from scratch a whole new framework and development environment based on MsA, Spring Boot, API-First, Event Driven, DDD, Hexagonal and so forth -- \textbf{Role}: Software Engineer.
-%
-%      \item \textit{Banc Sabadell}: \textbf{PSD2 \& APIfication} (2018--2020) -- Design \& implement the APIs for the european regulatory PSD2 project, leading the first approach to API exposition for the Banc. Definine and implement architectural components for the MsA where
-%      I was established as the technical lead for the dev team -- \textbf{Role}: Tech Lead.
-%
-%      \item \textit{Bankinter}: \textbf{Microservice Architecture} (2017)
-%      Worked in the development of an architecture for Bankinter based on MSA (Micro Services Architecture) with Java 8 and Spring Boot/Cloud. The Architecture provided the preconfigured components: from security, logging, audit,... to cryptography to allow developers to easily get started implementing small micro-services with not much Spring background required -- \textbf{Role}: Software Engineer.
-%   \end{itemize}
-%   }
-
+\vspace{5pt}
 \cvposition{2014--2016}{Software Engineer}{ICG Software}
-\cventry{Senior developer in charge of mobile solutions for business domains.}\vspace{-10pt}
-\cventry{Architecting mobile applications for Android and Windows Phone platforms.}
+\cventry{Develop mobile solutions for retail in Android and Windows Phone platforms.}
+
 
 \cvposition{2011--2013}{Researcher/developer}{AI Research Institute IIIA-CSIC}
-~~Spanish National Research Council. Innpacto-2011 (Spanish Science and Innovation Ministry),\par\vspace{2pt}
-~~\emph{NEWMATICA: Intelligent and Energy Efficient Advanced System for Vacuum Waste Collection}.
-
-\cventry{Research on artificial intelligence algorithms and machine learning.}\vspace{-8pt}
-\cventry{
-  Implement \emph{Approximate Dynamic Programming} (Reinforcement Learning) algorithms in order to optimize operational plans of waste collecting plants.
-}
-\cventry{Implement a waste collecting simulator, run simulations, collect data/process results.}
+%~~Spanish National Research Council. Innpacto-2011 (Spanish Science and Innovation Ministry),\par\vspace{2pt}
+~~\emph{NEWMATICA: Intelligent and Energy Efficient Advanced System for Vacuum Waste Collection}.\\[3pt]
+\cventry{Research Machine Learning algorithms based on \emph{Approximate Dynamic Programming}.}\\[-6pt]
+\cventry{Implement a waste collecting simulator to optimize operational plans, run simulations, collect data/process results.}
 
 
 %---------------------------------------------------------------------------------------
 %	EDUCATION SECTION
 %--------------------------------------------------------------------------------------
-\cvsection{Education ~\lowercase{\emph{(to see more, view the \href{https://gerardbosch.github.io/cv}{CV version})}}}
+\cvsection{Education ~\lowercase{\emph{(to see more, view the \href{https://gerardbosch.github.io/cv}{\color{magenta}{CV version}})}}}
 
-\vspace{-1em}
-\cvposition{2011}{M.Sc. Open Source Software Eng.}{University of Lleida}\vspace{-2pt}
-\cventry{Master Thesis: \emph{Setting up and deployment of Sauron system for DNS system management at University of Lleida.}}
-\cventry{Mobility program internship in \emph{VIA UC}, Denmark.}
-
+\vspace{-5pt}
+\cvposition{2011}{M.Sc. Open Source Software Eng.}{University of Lleida}
+\cventry{ Master Thesis: \emph{Setting up and deployment of Sauron system for DNS system management at University of Lleida.}}
+\null
+\cventry{ Mobility internship program at \emph{VIA UC}, Denmark. }
 
 % \cvposition{2010}{Bachelor Computer Science}{University of Lleida}\vspace{-2pt}
 % \cventry{Bachelor Thesis: \emph{Implementation of Golay codes in Sage Math.}}
 
 
 \end{minipage}}%
-\fcolorbox{white}{sectcol}{\begin{minipage}[c][0.95\textheight][t]{0.33\linewidth}
+\fcolorbox{white}{sidecolor}{\begin{minipage}[c][0.95\textheight][t]{0.33\linewidth}
 
 
 %----------------------------------------------------------------------------------------
@@ -472,7 +538,7 @@ My background is mostly about designing/implementing backend systems. I have goo
 \begin{metasection}{Contact}
 
 	\icontext{MapMarker}{12}{Barcelona, Spain}{white}\\[5pt]
-	\icontext{MobilePhone}{12}{+34 680 271 551}{white}\\[5pt]
+	%\icontext{MobilePhone}{12}{}{white}\\[5pt]
 	\iconemail{Envelope}{12}{gerard.bosch@gmail.com}{gerard.bosch@gmail.com}{white} \\[5pt]
 	\iconhref{Linkedin}{12}{linkedin.com/in/gerard-bosch}{https://www.linkedin.com/in/gerard-bosch}{white} \\[5pt]
 	%\iconhref{MousePointer}{12}{Webpage}{Webpage}{white} \\[5pt]
@@ -487,20 +553,20 @@ My background is mostly about designing/implementing backend systems. I have goo
 \vspace{5pt}
 \begin{tabular}{rl}
 
-Java 15 &
+Java 17 &
 \icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol} \\[2pt]
 
-Scala &
-\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white} \\[2pt]
+Scala 3 &
+\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white}\icon{Star}{12}{white} \\[2pt]
 
 Kotlin &
-\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white}\icon{Star}{12}{white} \\[2pt]
+\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white} \\[2pt]
 
 Bash &
 \icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white} \\[2pt]
 
 Haskell &
-\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white}\icon{Star}{12}{white} \\[2pt]
+\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white}\icon{Star}{12}{white}\icon{Star}{12}{white} \\[2pt]
 
 Python &
 \icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white}\icon{Star}{12}{white} \\[2pt]
@@ -517,7 +583,7 @@ Perl &
 
 \icontext{Code}{12}{Spring Boot}{white}
 \icontext{Code}{12}{Vavr}{white}
-\icontext{Key}{12}{oAuth}{white} \\[5pt]
+\icontext{Key}{12}{oAuth/JWT}{white} \\[5pt]
 
 \icontext{Gavel}{12}{Maven/Gradle/SBT}{white}
 \icontext{LifeSaver}{12}{JGitVer}{white} \\[5pt]
@@ -567,16 +633,16 @@ Perl &
     bubble node size = 0.9cm,
     % specifies which is the distance among the bubble center node and the other bubbles
     distance center/other bubbles = 0.5cm,
-%     % sets the distance from the text to the border of the bubble center node
-%     distance text center bubble = 0.5cm,
-%     % set center bubble color
+    % sets the distance from the text to the border of the bubble center node
+    %distance text center bubble = 0.5cm,
+    % set center bubble color
     bubble center node color = pastelblue,
-%     % define the list of colors usable in the diagram
-%     set color list = {lightgray, materialcyan, orange, green, materialorange, materialteal, materialamber, materialindigo, materialgreen, materiallime},
-%     % sets the opacity at which the bubbles are shown
-%     bubble fill opacity = 0.6,
-%     % sets the opacity at which the bubble text is shown
-%     bubble text opacity = 1,
+    % define the list of colors usable in the diagram
+    %set color list = {lightgray, materialcyan, orange, green, materialorange, materialteal, materialamber, materialindigo, materialgreen, materiallime},
+    % sets the opacity at which the bubbles are shown
+    %bubble fill opacity = 0.6,
+    % sets the opacity at which the bubble text is shown
+    %bubble text opacity = 1,
 }
 \smartdiagram[bubble diagram]{
     Knowledge \\ Areas,
@@ -589,6 +655,7 @@ Perl &
     API\\ security
 }
 
+\vspace{2ex}
 \smartdiagramset{
     bubble center node font = \footnotesize,
     bubble node font = \footnotesize,
@@ -598,16 +665,16 @@ Perl &
     bubble node size = 0.9cm,
     % specifies which is the distance among the bubble center node and the other bubbles
     distance center/other bubbles = 0.5cm,
-%     % sets the distance from the text to the border of the bubble center node
-%     distance text center bubble = 0.5cm,
-%     % set center bubble color
+    % sets the distance from the text to the border of the bubble center node
+    %distance text center bubble = 0.5cm,
+    % set center bubble color
     bubble center node color = orange,
-%     % define the list of colors usable in the diagram
-%     set color list = {lightgray, materialcyan, orange, green, materialorange, materialteal, materialamber, materialindigo, materialgreen, materiallime},
-%     % sets the opacity at which the bubbles are shown
-%     bubble fill opacity = 0.6,
-%     % sets the opacity at which the bubble text is shown
-%     bubble text opacity = 1,
+    % define the list of colors usable in the diagram
+    %set color list = {lightgray, materialcyan, orange, green, materialorange, materialteal, materialamber, materialindigo, materialgreen, materiallime},
+    % sets the opacity at which the bubbles are shown
+    %bubble fill opacity = 0.6,
+    % sets the opacity at which the bubble text is shown
+    %bubble text opacity = 1,
 }
 \smartdiagram[bubble diagram]{
     \normalsize{Interest} \\ \normalsize{Areas},
@@ -625,6 +692,9 @@ Perl &
 \end{minipage}}    % end side bar
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Fork me on GitHub
+% \scalebox{.9}{\forkme}
+\forkme
 
 %-------------------------------------------------------------------------------------------------
 %	ARTIFICIAL FOOTER (fancy footer cannot exceed linewidth)
@@ -637,9 +707,11 @@ Perl &
     \LaTeX~source of this \textit{résumé} is available at
     \iconhref{Github}{12}{https://github.com/gerardbosch/resume}{https://github.com/gerardbosch/resume}{white}
     ~$\cdot$~
+    Built by GitHub Actions
+    ~$\cdot$~
     Last updated: \today
   }
-}}
+}}\\[-7pt]
 
 %============================================================================%
 %

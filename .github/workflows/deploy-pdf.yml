@@ -21,6 +21,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: main.tex
+          latexmk_use_lualatex: true
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2

@@ -1,3 +1,5 @@
+![Build Status](https://github.com/gerardbosch/resume/actions/workflows/deploy-pdf.yml/badge.svg)
+
 # Resume
 
 LaTeX source for my _résumé_.

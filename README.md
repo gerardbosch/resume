@@ -4,7 +4,7 @@
 
 LaTeX source for my _résumé_.
 
-[Click here](http://gerardbosch.github.io/resume) to see the up to date PDF version.
+[Click here](https://gerardbosch.github.io/resume) to see the up to date PDF version.
 
 👆 The PDF is built and published on GitHub Pages using GitHub Actions :)
 

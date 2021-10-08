@@ -5,14 +5,15 @@
 
   // Install git just to assist with visual info and diffs inside the remote container
   "postCreateCommand": "apk add git",
-  
-  // Set *default* container specific settings.json values on container create. 
+
+  // Set *default* container specific settings.json values on container create.
   "settings": {},
 
   // Add the IDs of extensions you want installed when the container is created.
   // Note that some extensions may not work in Alpine Linux. See https://aka.ms/vscode-remote/linux.
   "extensions": [
-    "james-yu.latex-workshop"
+    "james-yu.latex-workshop",
+    "valentjn.vscode-ltex"
   ],
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.

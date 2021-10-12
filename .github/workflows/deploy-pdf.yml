@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: ⬇️  Checkout
         uses: actions/checkout@v2
+        with:
+          submodules: recursive       # { false, true, recursive } default: false
 
       - name: 🔨  Compile LaTeX document
         uses: xu-cheng/latex-action@v2

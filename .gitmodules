@@ -1,0 +1,3 @@
+[submodule "deploy/pdf.js-dist"]
+	path = deploy/pdf.js-dist
+	url = https://gitlab.com/gerardbosch/pdf.js-dist.git

@@ -54,7 +54,7 @@
 \renewcommand*\familydefault{\sfdefault}
 
 \usepackage{moresize}     % more font size definitions
-\usepackage{fontawesome}
+\usepackage{fontawesome5}%\faStyle{regular} % [solid (default), regular]
 \usepackage{emoji}
 \usepackage{tabularx}
 
@@ -343,32 +343,32 @@
 %----------------------------------------------------------------------------------------
 
 % args: (iconName, boxSize, color)
-\newcommand{\icon}[3]{%	                        %icon shortcut
-    \vcenteredhbox{\makebox(#2, #2){\textcolor{#3}{\csname fa#1\endcsname}}}%
+\newcommand{\icon}[3]{%                 %icon shortcut
+    \vcenteredhbox{\makebox(#2, #2){\textcolor{#3}{\faIcon{#1}}}}%
 }
 
 % args: (iconName, boxSize, text, color)
-\newcommand{\icontext}[4]{ 						%icon with text shortcut
-    \vcenteredhbox{\icon{#1}{#2}{#4}} \vcenteredhbox{\textcolor{#4}{#3}}
+\newcommand{\icontext}[4]{% 						%icon with text shortcut
+    \vcenteredhbox{\icon{#1}{#2}{#4}} \vcenteredhbox{\textcolor{#4}{#3}}%
 }
 
 % args: (iconName, boxSize, text, url, textColor)
-\newcommand{\iconhref}[5]{ 						%icon with website url
-    \vcenteredhbox{\icon{#1}{#2}{#5}} \href{#4}{\textcolor{#5}{#3}}
+\newcommand{\iconhref}[5]{% 					  %icon with website url
+    \vcenteredhbox{\icon{#1}{#2}{#5}} \href{#4}{\textcolor{#5}{#3}}%
 }
 
 % args: (iconName, boxSize, text, mailto, color)
-\newcommand{\iconemail}[5]{ 					%icon with email link
-    \vcenteredhbox{\icon{#1}{#2}{#5}} \href{mailto:#4}{\textcolor{#5}{#3}}
+\newcommand{\iconemail}[5]{% 					  %icon with email link
+    \vcenteredhbox{\icon{#1}{#2}{#5}} \href{mailto:#4}{\textcolor{#5}{#3}}%
 }
 
 %----------------------------------------------------------------------------------
 %  Fork me on GitHub
 %----------------------------------------------------------------------------------
 
-\usepackage{tikz}
+%\usepackage{tikz} % already included
 \usepackage{ifthen}
-\usepackage{xcolor}
+%\usepackage{xcolor} % already included
 \usetikzlibrary{shadows.blur}
 
 \definecolor{forkmebg}{HTML}{3873b3}
@@ -542,12 +542,12 @@
 
 \begin{metasection}{Contact}
 
-	\icontext{MapMarker}{12}{Barcelona, Spain}{white}\\[5pt]
+	\icontext{globe-americas}{12}{US/EU Worldwide remote}{white}\\[5pt]
 	%\icontext{MobilePhone}{12}{}{white}\\[5pt]
-	\iconemail{Envelope}{12}{gerard.bosch@gmail.com}{gerard.bosch@gmail.com}{white} \\[5pt]
-	\iconhref{Linkedin}{12}{linkedin.com/in/gerard-bosch}{https://www.linkedin.com/in/gerard-bosch}{white} \\[5pt]
+	\iconemail{envelope}{12}{gerard.bosch@gmail.com}{gerard.bosch@gmail.com}{white} \\[5pt]
+	\iconhref{linkedin}{12}{linkedin.com/in/gerard-bosch}{https://www.linkedin.com/in/gerard-bosch}{white} \\[5pt]
 	%\iconhref{MousePointer}{12}{Webpage}{Webpage}{white} \\[5pt]
-	\iconhref{GithubAlt}{12}{github.com/gerardbosch}{https://github.com/gerardbosch}{white} \\[5pt]
+	\iconhref{github-alt}{12}{github.com/gerardbosch}{https://github.com/gerardbosch}{white} \\[5pt]
 	%\iconhref{StackOverflow}{12}{stackoverflow.com/users/6108874/gerard-bosch}{https://stackoverflow.com/users/6108874/gerard-bosch}{white} \\[5pt]
 	%\iconhref{Twitter}{12}{@user}{https://twitter.com/user}{white} \\[5pt]
 
@@ -559,25 +559,25 @@
 \begin{tabular}{rl}
 
 Java 17 &
-\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol} \\[2pt]
+\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol} \\[2pt]
 
 Scala 3 &
-\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white}\icon{Star}{12}{white} \\[2pt]
+\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{white}\icon{star}{12}{white} \\[2pt]
 
 Kotlin &
-\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white} \\[2pt]
+\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{white} \\[2pt]
 
 Bash &
-\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white} \\[2pt]
+\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{white} \\[2pt]
 
 Haskell &
-\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white}\icon{Star}{12}{white}\icon{Star}{12}{white} \\[2pt]
+\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{white}\icon{star}{12}{white}\icon{star}{12}{white} \\[2pt]
 
 Python &
-\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white}\icon{Star}{12}{white} \\[2pt]
+\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{white}\icon{star}{12}{white} \\[2pt]
 
 Perl &
-\icon{Star}{12}{complcol}\icon{Star}{12}{white}\icon{Star}{12}{white}\icon{Star}{12}{white}\icon{Star}{12}{white}
+\icon{star}{12}{complcol}\icon{star}{12}{white}\icon{star}{12}{white}\icon{star}{12}{white}\icon{star}{12}{white}
 
 \end{tabular}
 \end{metasection}
@@ -587,19 +587,19 @@ Perl &
 \begin{metasection}{Technologies}
 
 % \color{white}{\faDatabase~SQL} % alternative way, produces better vertical alignment than the custom \icontext
-\icontext{Code}{12}{Spring Boot}{white}
-\icontext{Code}{12}{Vavr}{white}
-\icontext{Key}{12}{oAuth/JWT}{white} \\[5pt]
+\icontext{code}{12}{Spring Boot}{white}~
+\icontext{code}{12}{Vavr}{white}~
+\icontext{key}{12}{oAuth/JWT}{white} \\[5pt]
 
-\icontext{Gavel}{12}{Maven/Gradle/sbt}{white}
-\icontext{LifeSaver}{12}{JGitVer}{white} \\[5pt]
+\icontext{gavel}{12}{Maven/Gradle/sbt}{white}~
+\icontext{life-ring}{12}{JGitVer}{white} \\[5pt]
 
-\icontext{Database}{12}{SQL}{white}
-\icontext{PuzzlePiece}{12}{API First \& OpenAPI 3}{white} \\[5pt]
+\icontext{database}{12}{SQL}{white}~
+\icontext{puzzle-piece}{12}{API First \& OpenAPI 3}{white} \\[5pt]
 
-\icontext{Cube}{12}{Docker}{white}
-\icontext{Cubes}{12}{OpenShift}{white}
-\icontext{Cloud}{12}{Cloudflare}{white}
+\icontext{cube}{12}{Docker}{white}~
+\icontext{cubes}{12}{OpenShift}{white}~
+\icontext{cloudflare}{12}{Cloudflare}{white}
 
 \end{metasection}
 
@@ -607,9 +607,9 @@ Perl &
 \vspace{-0.3cm}
 \begin{metasection}{Tools}
 
-\icontext{Code}{12}{IntelliJ / VSCode / vim :)}{white} \\[5pt]
-\icontext{CodeFork}{12}{Git}{white} \icontext{Terminal}{12}{ZSH}{white} \icontext{Commenting}{12}{Codestream}{white} \\[5pt]
-\icontext{Linux}{12}{Linux}{white} \icontext{Dropbox}{12}{Nix}{white}
+\icontext{code}{12}{IntelliJ / VSCode / vim :)}{white} \\[5pt]
+\icontext{code-branch}{12}{Git}{white}~ \icontext{terminal}{12}{ZSH}{white}~ \icontext{comment}{12}{Codestream}{white} \\[5pt]
+\icontext{linux}{12}{Linux}{white}~ \icontext{dropbox}{12}{Nix}{white}
 
 \end{metasection}
 

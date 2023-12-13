@@ -11,6 +11,11 @@
 ## MacOs
 .DS_Store
 
+## Build dir (resulting PDF, aux files,...)
+build/
+
+# All the following should be unnecessary since using the build dir
+
 # output pdf
 main.pdf
 

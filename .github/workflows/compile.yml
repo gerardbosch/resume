@@ -1,6 +1,6 @@
 name: 'Compile LaTeX'
 
-# Controls when the action will run.
+# Controls when the action will run
 on:
   push:
     branches:
@@ -25,4 +25,4 @@ jobs:
           root_file: 'main.tex'
           latexmk_use_lualatex: true
           # TODO arguably the mv to deploy should be part of compile step
-          post_compile: 'mv build/main.pdf deploy/'
+          post_compile: 'cp build/main.pdf deploy/ && ls -la deploy'

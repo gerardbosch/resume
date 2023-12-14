@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.194.3/containers/alpine
 {
-  "image": "ghcr.io/xu-cheng/texlive-full",
+  "image": "ghcr.io/xu-cheng/texlive-full:20231201",
 
   // Install git just to assist with visual info and diffs inside the remote container
   "postCreateCommand": "apk add git",

@@ -24,5 +24,6 @@ jobs:
         with:
           root_file: 'main.tex'
           latexmk_use_lualatex: true
+          docker_image: 'ghcr.io/xu-cheng/texlive-full:20231201' # fixed texlive version, should match the one in devcontainer
           # TODO arguably the mv to deploy should be part of compile step
           post_compile: 'cp build/main.pdf deploy/ && ls -la deploy'

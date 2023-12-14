@@ -4,7 +4,7 @@ name: 'Compile LaTeX'
 on:
   push:
     branches:
-      - '*'
+      - '**' # '*' Matches zero or more characters, but does not match the `/` character. '**' matches zero or more of any character.
       - '!main'
   # Allows to run this workflow manually from the Actions tab
   workflow_dispatch:

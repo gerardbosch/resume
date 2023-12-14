@@ -17,7 +17,7 @@ to be sure).
 Then:
 
 ```shell
-lualatex main.tex
+latexmk main.tex
 ```
 
 That's it!
@@ -28,12 +28,12 @@ This repository includes a `.devcontainer` configuration to connect VSCode to a 
 installed + LaTeX Workshop extension. This image is the same used by the CI pipeline to deploy the PDF.
 
 You can open the project in VSCode, connect to the remote container and build the PDF within
-there. **Note**: Make sure to select the `lualatex` recipe to build.
+there. **Note**: Make sure to select the `latexmkrc` recipe to build.
 
 ## Option C: Overleaf online
 
 If you need to quickly get a managed environment to edit LaTeX documents, go for <https://overleaf.com>. It provides an
-online editor with a TeX Live full installation and you can build the PDFs from there. Keep an eye on the options as
+online editor with a TeX Live full installation, and you can build the PDFs from there. Keep an eye on the options as
 this document needs to be built with LuaLaTeX.
 
 The sad part is that (at the time of writing) the integration with Git is for paid plans only.
@@ -63,7 +63,7 @@ If you fork this repository to bootstrap your own resume keep in mind the follow
 
     And the placeholder replacement step in the CI pipeline (See `.github/workflows`).
 
-- The published page is using [DataUnlocker](dataunlocker.com) to recover analytics traffic blocked by ad-blockers.
+- The published page is using [DataUnlocker](https://dataunlocker.com/) to recover analytics traffic blocked by ad-blockers.
 
   - **If you pretend to use this feature**, you need to define a repository secret `DATA_UNLOCKER_PROP_ID` with the
     property value provided by DataUnlocker.

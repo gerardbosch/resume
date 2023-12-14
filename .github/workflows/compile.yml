@@ -25,4 +25,4 @@ jobs:
           root_file: 'main.tex'
           latexmk_use_lualatex: true
           # TODO arguably the mv to deploy should be part of compile step
-          post_compile: 'mv main.pdf deploy/'
+          post_compile: 'mv build/main.pdf deploy/'

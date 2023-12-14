@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: '⬇️  Checkout'
-        uses: 'actions/checkout@v2'
+        uses: 'actions/checkout@v3'
         with:
           submodules: 'recursive'       # { false, true, recursive } default: false
 
@@ -24,6 +24,6 @@ jobs:
         with:
           root_file: 'main.tex'
           docker_image: 'ghcr.io/xu-cheng/texlive-full:20231201' # fixed texlive version, should match the one in devcontainer
-          # latexmk_use_lualatex: true # disabled: driven by .latexmkrc
+          #latexmk_use_lualatex: true # disabled: driven by .latexmkrc
           args: '' # override default arguments and rely/honor on .latexmkrc
           post_compile: 'ls -la build' # just log build files

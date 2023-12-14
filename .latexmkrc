@@ -28,17 +28,19 @@ $pdf_mode = 4;
 #
 # `--interaction=nonstopmode`: compilation continues on error, instead of prompting user input.
 #
-# `--shell-escape` option (execution of code outside of latex) is required for the 'svg' package.
-# It converts raw SVG files to the PDF+PDF_TEX combo using InkScape.
+# `--halt-on-error`: stop compilation immediately on the first error.
+#
+# `--shell-escape`: allow execution of code outside of latex (required for the 'svg' package; it converts raw SVG files
+#     to the PDF+PDF_TEX combo using InkScape).
 #
 # `--synctex` allows to jump between source (code) and output (PDF) in IDEs with support (many have it). A value of `1`
-# is enabled (gzipped), `-1` is enabled but uncompressed, `0` is off.
-# Testing in VSCode w/ LaTeX Workshop only worked for the compressed version. Adjust this as needed. Of course, only
-# relevant for local use, no effect on a remote CI pipeline (except for slower compilation, probably).
+#     is enabled (gzipped), `-1` is enabled but uncompressed, `0` is off.
+#     Testing in VSCode w/ LaTeX Workshop only worked for the compressed version. Adjust this as needed. Of course, only
+#     relevant for local use, no effect on a remote CI pipeline (except for slower compilation, probably).
 #
-# %O and %S will forward Options and the Source file, respectively, given to latexmk.
+# %O and %S will forward Options and the Source file, respectively, given to latexmk. latexmk itself adds some options.
 #
-set_tex_cmds("--interaction=nonstopmode --synctex=1 --shell-escape --file-line-error %O %S");
+set_tex_cmds("--interaction=nonstopmode --halt-on-error --file-line-error --shell-escape --synctex=1 %O %S");
 
 # Disable PS and DVI generation
 $postscript_mode = $dvi_mode = 0;

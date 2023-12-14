@@ -20,7 +20,7 @@ jobs:
           submodules: 'recursive'       # { false, true, recursive } default: false
 
       - name: '🔨  Compile LaTeX document'
-        uses: 'xu-cheng/latex-action@v2'
+        uses: 'xu-cheng/latex-action@v3'
         with:
           root_file: 'main.tex'
           latexmk_use_lualatex: true

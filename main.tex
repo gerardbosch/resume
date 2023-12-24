@@ -57,6 +57,7 @@
 \usepackage{fontawesome5}%\faStyle{regular} % [solid (default), regular]
 \usepackage{emoji}
 \usepackage{tabularx}
+\usepackage[normalem]{ulem} % [normalem] prevents the package from changing the default behavior of `\emph` to underline.
 
 %----------------------------------------------------------------------------------------
 %	PAGE LAYOUT  DEFINITIONS
@@ -105,7 +106,7 @@
 
 % For drawing graphics
 \usepackage{tikz}
-\usetikzlibrary{shapes, backgrounds,mindmap, trees}
+\usetikzlibrary{shapes, backgrounds, mindmap, trees, positioning}
 
 % Bubble diagrams
 \usepackage{smartdiagram}
@@ -233,6 +234,13 @@
 	\filldraw[fill=sectcol!100,draw=sectcol!100!black] \tzrarrow
  \end{tikzpicture}
 }
+
+% =====================
+% === Customization ===
+% =====================
+
+% Custom command to specify the color in links
+\newcommand*{\hrefcol}[3][magenta]{\href{#2}{\textcolor{#1}{#3}}}
 
 %----------------------------------------------------------------------------------------
 %	custom sections
@@ -621,10 +629,10 @@ Perl &
 
 \icontext{docker}{12}{Docker}{white}~
 \icontext{cubes}{12}{OpenShift}{white}~
-\icontext{cloudflare}{12}{Cloudflare}{white}
+\icontext{cloudflare}{12}{Cloudflare}{white} \\[5pt]
 
 \icontext{cube}{12}{Devcontainers}{white}~
-\icontext{cube}{12}{Testcontainers}{white}~
+\icontext{cube}{12}{Testcontainers}{white}% \\[5pt]
 
 \end{metasection}
 
@@ -691,33 +699,23 @@ Perl &
 }
 
 \vspace{2ex}
-\smartdiagramset{
-    bubble center node font = \footnotesize,
-    bubble node font = \footnotesize,
-    % specifies the minimum size of the bubble center node
-    bubble center node size = 0.1cm,
-    %  specifies the minimum size of the bubbles
-    bubble node size = 0.9cm,
-    % specifies which is the distance among the bubble center node and the other bubbles
-    distance center/other bubbles = 0.5cm,
-    % sets the distance from the text to the border of the bubble center node
-    %distance text center bubble = 0.5cm,
-    % set center bubble color
-    bubble center node color = orange,
-    % define the list of colors usable in the diagram
-    %set color list = {lightgray, materialcyan, orange, green, materialorange, materialteal, materialamber, materialindigo, materialgreen, materiallime},
-    % sets the opacity at which the bubbles are shown
-    %bubble fill opacity = 0.6,
-    % sets the opacity at which the bubble text is shown
-    %bubble text opacity = 1,
-}
-\smartdiagram[bubble diagram]{
-    \normalsize{Interest} \\ \normalsize{Areas},
-    \textbf{~~~~DLTs \&~~~~} \\ \textbf{Blockchain},
-    \textbf{Functional} \\ \textbf{Programming},
-    \textbf{Artificial} \\ \textbf{Intelligence},
-    \textbf{Big/Fast Data} \\ \textbf{\& Streaming}
-}
+\begin{tikzpicture}
+  % Define styles for the nodes: planet, satellite, satchild
+  \tikzstyle{planet}=[circle, fill=orange, minimum size=3.2cm, align=center]
+  \tikzstyle{satellite}=[circle, draw, fill=green!40, minimum size=1.3cm, align=center, opacity=0.7, font=\footnotesize, postaction={draw=white, line width=1.5pt, opacity=1}]
+  \tikzstyle{satchild}=[circle, draw, fill=green!25, minimum size=0.7cm, align=center, opacity=0.7, font=\footnotesize, postaction={draw=white, line width=1pt, opacity=1}]
+
+  \node (interests) [planet] {Interest \\ Areas};
+
+  \node (bigdata) [satellite, above=-0.7cm of interests, fill=gray!30] {\textbf{Big/Fast Data} \\ \textbf{\& Streaming}};
+  \node (blockchain) [satellite, right=-0.7cm of interests, fill=blue!30] {\textbf{DLTs/} \\ \textbf{Blockchain,} \\ \textbf{Web3}};
+  \node (fp) [satellite, below=-0.7cm of interests] {\textbf{Functional} \\ \textbf{Programming}};
+  \node (ai) [satellite, left=-0.7cm of interests, fill=yellow!30] {\textbf{Artificial} \\ \textbf{Intelligence}};
+
+  \node (unison) [satchild] at ($(fp) + (205:1.4cm)$) {\hrefcol[violet]{https://www.unison-lang.org/docs/the-big-idea/}{\dashuline{Unison}}};
+  \node (unison) [satchild] at ($(fp) + (-25:1.4cm)$) {\hrefcol[violet]{https://zio.dev/}{\dashuline{ZIO}},\\ \hrefcol[violet]{https://getkyo.io}{\dashuline{Kyo}}};
+  \node (unison) [satchild, below=-4mm of fp] {Effect,\\ systems};
+\end{tikzpicture}
 
 \end{center}
 \end{metasection}

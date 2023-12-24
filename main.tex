@@ -54,9 +54,10 @@
 \renewcommand*\familydefault{\sfdefault}
 
 \usepackage{moresize}     % more font size definitions
-\usepackage{fontawesome}
+\usepackage{fontawesome5}%\faStyle{regular} % [solid (default), regular]
 \usepackage{emoji}
 \usepackage{tabularx}
+\usepackage[normalem]{ulem} % [normalem] prevents the package from changing the default behavior of `\emph` to underline.
 
 %----------------------------------------------------------------------------------------
 %	PAGE LAYOUT  DEFINITIONS
@@ -66,7 +67,7 @@
 %\usepackage{showframe}
 
 % define page size and styles using geometry
-\usepackage[paperheight=297mm, paperwidth=210mm]{geometry} % [a4paper] [heightrounded]???
+\usepackage[paperheight=329mm, paperwidth=210mm]{geometry} % [a4paper] [heightrounded]???
 
 % for example, change the margins to 2 inches all round
 \geometry{top=0.8cm, bottom=-.6cm, left=0.4cm, right=1cm}
@@ -105,7 +106,7 @@
 
 % For drawing graphics
 \usepackage{tikz}
-\usetikzlibrary{shapes, backgrounds,mindmap, trees}
+\usetikzlibrary{shapes, backgrounds, mindmap, trees, positioning}
 
 % Bubble diagrams
 \usepackage{smartdiagram}
@@ -234,6 +235,13 @@
  \end{tikzpicture}
 }
 
+% =====================
+% === Customization ===
+% =====================
+
+% Custom command to specify the color in links
+\newcommand*{\hrefcol}[3][magenta]{\href{#2}{\textcolor{#1}{#3}}}
+
 %----------------------------------------------------------------------------------------
 %	custom sections
 %----------------------------------------------------------------------------------------
@@ -324,8 +332,7 @@
 %----------------------------------------------------------------------------------------
 % CUSTOM LOREM IPSUM
 %----------------------------------------------------------------------------------------
-\newcommand{\lorem}
-{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.}
+\newcommand{\lorem}{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.}
 
 % use to vertically center content
 % credits to: http://tex.stackexchange.com/questions/7219/how-to-vertically-center-two-images-next-to-each-other
@@ -343,32 +350,32 @@
 %----------------------------------------------------------------------------------------
 
 % args: (iconName, boxSize, color)
-\newcommand{\icon}[3]{%	                        %icon shortcut
-    \vcenteredhbox{\makebox(#2, #2){\textcolor{#3}{\csname fa#1\endcsname}}}%
+\newcommand{\icon}[3]{%                 %icon shortcut
+    \vcenteredhbox{\makebox(#2, #2){\textcolor{#3}{\faIcon{#1}}}}%
 }
 
 % args: (iconName, boxSize, text, color)
-\newcommand{\icontext}[4]{ 						%icon with text shortcut
-    \vcenteredhbox{\icon{#1}{#2}{#4}} \vcenteredhbox{\textcolor{#4}{#3}}
+\newcommand{\icontext}[4]{% 						%icon with text shortcut
+    \vcenteredhbox{\icon{#1}{#2}{#4}} \vcenteredhbox{\textcolor{#4}{#3}}%
 }
 
 % args: (iconName, boxSize, text, url, textColor)
-\newcommand{\iconhref}[5]{ 						%icon with website url
-    \vcenteredhbox{\icon{#1}{#2}{#5}} \href{#4}{\textcolor{#5}{#3}}
+\newcommand{\iconhref}[5]{% 					  %icon with website url
+    \vcenteredhbox{\icon{#1}{#2}{#5}} \href{#4}{\textcolor{#5}{#3}}%
 }
 
 % args: (iconName, boxSize, text, mailto, color)
-\newcommand{\iconemail}[5]{ 					%icon with email link
-    \vcenteredhbox{\icon{#1}{#2}{#5}} \href{mailto:#4}{\textcolor{#5}{#3}}
+\newcommand{\iconemail}[5]{% 					  %icon with email link
+    \vcenteredhbox{\icon{#1}{#2}{#5}} \href{mailto:#4}{\textcolor{#5}{#3}}%
 }
 
 %----------------------------------------------------------------------------------
 %  Fork me on GitHub
 %----------------------------------------------------------------------------------
 
-\usepackage{tikz}
+%\usepackage{tikz} % already included
 \usepackage{ifthen}
-\usepackage{xcolor}
+%\usepackage{xcolor} % already included
 \usetikzlibrary{shadows.blur}
 
 \definecolor{forkmebg}{HTML}{3873b3}
@@ -408,7 +415,7 @@
   \textcolor{introcolor}{\rule[-1mm]{1mm}{0.9cm}}
   \parbox[b]{5cm}{
     \large{{Software Engineer}} \\
-    \large{{Craftsman}}
+    {{Freelancer/Contractor}}
   }
 }}
 
@@ -455,7 +462,7 @@
 %----------------------------------------------------------------------------------------
 \cvsection{Summary}
 
-[ \textcolor{gray}{\emph{Read the full detailed CV at}} \href{https://cv.gerardbosch.xyz}{https://cv.gerardbosch.xyz} ] \\[-2pt]
+[ \emoji{scroll}  \textcolor{gray}{\emph{Read the extended CV version at}} \href{https://cv.gerardbosch.xyz}{cv.gerardbosch.xyz} ] \\[-2pt]
 
 {\small My background is mostly about designing/implementing backend systems and APIs. I have good analysis skills and can break down requirements well and transform that into code. Really concerned about the code itself, its readability, expressiveness, precision and conciseness. Continuous improvement advocate \& continuous refactor and code reuse as a mantra. Accidental-complexity fighter. Curious by nature, proactive and self-taught. Like learning~\emoji{smiley}, love crafting \emoji{heart}.}
 
@@ -479,7 +486,30 @@
 \end{tabular}\vspace{5pt}
 
 
-\cvposition{2021}{Software Engineer}{N26 Bank}
+\cvposition{2022--2023}{(Break) / Software Engineer}{Self employed}
+
+\cventry{
+  I set up my own company to provide software engineering services as a contractor.
+}
+\null
+\vspace{-7pt}
+\cventry{
+  Algorithmic trading, research, design \& implementation of safety mechanisms for loss control, as well as key metrics collection/reporting using DDD \& Hexagonal arch.
+}
+\null
+\vspace{-3pt}
+\cventry{
+  High level design of a multi-level affiliation system with referral fee distribution.
+}
+\null
+\vspace{-7pt}
+\cventry{
+  Took a break from industry. Learning about finances, markets and investments.
+}
+\null
+
+
+\cvposition{2021--2022}{Software Engineer}{N26 Bank}
 
 \cventry{
   Joined the fees team, which is in charge of designing and operating a new fee platform intended to be the new-standardized way of charging company-wide banking fees. That implied not only the creation of a dedicated microservice, also re-purposing and refactoring of existent ones (by DDD/CleanArch), along with APIs, as well as DB migrations.
@@ -492,7 +522,7 @@
 \cventry{Stack: \textit{Kotlin, Spring Boot, Microservices, EDA, Kafka, REST, Postgres, Datadog, ELK, AWS,\ldots}}
 
 
-\cvposition{2016 - 2021}{Senior Software Engineer}{GFT IT Consulting}
+\cvposition{2016--2021}{Senior Software Engineer}{GFT IT Consulting}
 % ~~PROJECT HIGHLIGHTS (most relevant ones):
 
 \cventry{
@@ -500,7 +530,7 @@
 }
 \null
 \cventry{
-  \textit{Banc Sabadell}: \textbf{PSD2 \& APIfication} (2018--2020) -- Design \& implement the APIs for the European regulatory PSD2 project, leading the first approach to API exposition for the Bank. Define and implement architectural components for the MsA where I was established as the technical lead for the dev team -- \textbf{Role}: Tech Lead.
+  \textit{Banc Sabadell}: \textbf{PSD2 \& APIfication} (2018--2020) -- Design \& implement the APIs and requirements for the European \href{https://en.wikipedia.org/wiki/Payment_Services_Directive}{PSD2 regulation}; leading the first approach to API exposition for the Bank. Define and implement architectural components for the MsA where I was established as the technical lead for the dev team -- \textbf{Role}: Tech Lead.
 }
 \null
 \cventry{
@@ -525,7 +555,7 @@
 \cvsection{Education ~\lowercase{\emph{(to see more, view the \href{https://cv.gerardbosch.xyz}{\color{magenta}{CV version}})}}}
 
 \vspace{-5pt}
-\cvposition{2011}{M.Sc. Open Source Software Eng.}{University of Lleida}
+\cvposition{2011}{M.Sc. Open Source Software Eng.}{University of Lleida (ES) / VIA UC (DK)}
 \cventry{Master Thesis: \emph{Setting up and deployment of Sauron system for DNS system management at University of Lleida}. Mobility internship program at \emph{VIA UC}, Denmark.}
 
 % \cvposition{2010}{Bachelor Computer Science}{University of Lleida}\vspace{-2pt}
@@ -542,15 +572,15 @@
 
 \begin{metasection}{Contact}
 
-	\icontext{MapMarker}{12}{Barcelona, Spain}{white}\\[5pt]
+	\icontext{globe-americas}{12}{US/EU Worldwide remote}{white}\\[5pt]
 	%\icontext{MobilePhone}{12}{}{white}\\[5pt]
-	\iconemail{Envelope}{12}{gerard.bosch@gmail.com}{gerard.bosch@gmail.com}{white} \\[5pt]
-	\iconhref{Linkedin}{12}{linkedin.com/in/gerard-bosch}{https://www.linkedin.com/in/gerard-bosch}{white} \\[5pt]
+	\iconemail{envelope}{12}{gerard.bosch@gmail.com}{gerard.bosch@gmail.com}{white} \\[5pt]
+	\iconhref{linkedin}{12}{linkedin.com/in/gerard-bosch}{https://www.linkedin.com/in/gerard-bosch}{white} \\[5pt]
 	%\iconhref{MousePointer}{12}{Webpage}{Webpage}{white} \\[5pt]
-	\iconhref{GithubAlt}{12}{github.com/gerardbosch}{https://github.com/gerardbosch}{white} \\[5pt]
+	\iconhref{github-alt}{12}{github.com/gerardbosch}{https://github.com/gerardbosch}{white} \\[5pt]
 	%\iconhref{StackOverflow}{12}{stackoverflow.com/users/6108874/gerard-bosch}{https://stackoverflow.com/users/6108874/gerard-bosch}{white} \\[5pt]
 	%\iconhref{Twitter}{12}{@user}{https://twitter.com/user}{white} \\[5pt]
-
+  \iconhref{laptop}{12}{gerardbosch.xyz}{https://gerardbosch.xyz}{white} \\[5pt]
 \end{metasection}
 
 \vspace{-0.3cm}
@@ -558,26 +588,26 @@
 \vspace{5pt}
 \begin{tabular}{rl}
 
-Java 17 &
-\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol} \\[2pt]
+Kotlin &
+\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{white} \\[2pt]
+
+Java 21 &
+\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol} \\[2pt]
 
 Scala 3 &
-\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white}\icon{Star}{12}{white} \\[2pt]
-
-Kotlin &
-\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white} \\[2pt]
+\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{white}\icon{star}{12}{white} \\[2pt]
 
 Bash &
-\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white} \\[2pt]
+\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{white} \\[2pt]
 
 Haskell &
-\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white}\icon{Star}{12}{white}\icon{Star}{12}{white} \\[2pt]
+\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{white}\icon{star}{12}{white}\icon{star}{12}{white} \\[2pt]
 
 Python &
-\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white}\icon{Star}{12}{white} \\[2pt]
+\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{white}\icon{star}{12}{white} \\[2pt]
 
 Perl &
-\icon{Star}{12}{complcol}\icon{Star}{12}{white}\icon{Star}{12}{white}\icon{Star}{12}{white}\icon{Star}{12}{white}
+\icon{star}{12}{complcol}\icon{star}{12}{white}\icon{star}{12}{white}\icon{star}{12}{white}\icon{star}{12}{white}
 
 \end{tabular}
 \end{metasection}
@@ -587,19 +617,22 @@ Perl &
 \begin{metasection}{Technologies}
 
 % \color{white}{\faDatabase~SQL} % alternative way, produces better vertical alignment than the custom \icontext
-\icontext{Code}{12}{Spring Boot}{white}
-\icontext{Code}{12}{Vavr}{white}
-\icontext{Key}{12}{oAuth/JWT}{white} \\[5pt]
+\icontext{code}{12}{Spring Boot}{white}~
+\icontext{code}{12}{Vavr}{white}~
+\icontext{key}{12}{oAuth/JWT}{white} \\[5pt]
 
-\icontext{Gavel}{12}{Maven/Gradle/sbt}{white}
-\icontext{LifeSaver}{12}{JGitVer}{white} \\[5pt]
+\icontext{gavel}{12}{Maven/Gradle/sbt}{white}~
+\icontext{life-ring}{12}{JGitVer}{white} \\[5pt]
 
-\icontext{Database}{12}{SQL}{white}
-\icontext{PuzzlePiece}{12}{API First \& OpenAPI 3}{white} \\[5pt]
+\icontext{database}{12}{SQL}{white}~
+\icontext{puzzle-piece}{12}{API First \& OpenAPI 3}{white} \\[5pt]
 
-\icontext{Cube}{12}{Docker}{white}
-\icontext{Cubes}{12}{OpenShift}{white}
-\icontext{Cloud}{12}{Cloudflare}{white}
+\icontext{docker}{12}{Docker}{white}~
+\icontext{cubes}{12}{OpenShift}{white}~
+\icontext{cloudflare}{12}{Cloudflare}{white} \\[5pt]
+
+\icontext{cube}{12}{Devcontainers}{white}~
+\icontext{cube}{12}{Testcontainers}{white}% \\[5pt]
 
 \end{metasection}
 
@@ -607,9 +640,9 @@ Perl &
 \vspace{-0.3cm}
 \begin{metasection}{Tools}
 
-\icontext{Code}{12}{IntelliJ / VSCode / vim :)}{white} \\[5pt]
-\icontext{CodeFork}{12}{Git}{white} \icontext{Terminal}{12}{ZSH}{white} \icontext{Commenting}{12}{Codestream}{white} \\[5pt]
-\icontext{Linux}{12}{Linux}{white} \icontext{Dropbox}{12}{Nix}{white}
+\icontext{code}{12}{IntelliJ / VSCode / vim :)}{white} \\[5pt]
+\icontext{code-branch}{12}{Git}{white}~ \icontext{terminal}{12}{ZSH}{white}~ \icontext{comment}{12}{Codestream}{white} \\[5pt]
+\icontext{linux}{12}{Linux}{white}~ \icontext{dropbox}{12}{Nix}{white}
 
 \end{metasection}
 
@@ -666,33 +699,23 @@ Perl &
 }
 
 \vspace{2ex}
-\smartdiagramset{
-    bubble center node font = \footnotesize,
-    bubble node font = \footnotesize,
-    % specifies the minimum size of the bubble center node
-    bubble center node size = 0.1cm,
-    %  specifies the minimum size of the bubbles
-    bubble node size = 0.9cm,
-    % specifies which is the distance among the bubble center node and the other bubbles
-    distance center/other bubbles = 0.5cm,
-    % sets the distance from the text to the border of the bubble center node
-    %distance text center bubble = 0.5cm,
-    % set center bubble color
-    bubble center node color = orange,
-    % define the list of colors usable in the diagram
-    %set color list = {lightgray, materialcyan, orange, green, materialorange, materialteal, materialamber, materialindigo, materialgreen, materiallime},
-    % sets the opacity at which the bubbles are shown
-    %bubble fill opacity = 0.6,
-    % sets the opacity at which the bubble text is shown
-    %bubble text opacity = 1,
-}
-\smartdiagram[bubble diagram]{
-    \normalsize{Interest} \\ \normalsize{Areas},
-    \textbf{~~~~DLTs \&~~~~} \\ \textbf{Blockchain},
-    \textbf{Functional} \\ \textbf{Programming},
-    \textbf{Artificial} \\ \textbf{Intelligence},
-    \textbf{Big/Fast Data} \\ \textbf{\& Streaming}
-}
+\begin{tikzpicture}
+  % Define styles for the nodes: planet, satellite, satchild
+  \tikzstyle{planet}=[circle, fill=orange, minimum size=3.2cm, align=center]
+  \tikzstyle{satellite}=[circle, draw, fill=green!40, minimum size=1.3cm, align=center, opacity=0.7, font=\footnotesize, postaction={draw=white, line width=1.5pt, opacity=1}]
+  \tikzstyle{satchild}=[circle, draw, fill=green!25, minimum size=0.7cm, align=center, opacity=0.7, font=\footnotesize, postaction={draw=white, line width=1pt, opacity=1}]
+
+  \node (interests) [planet] {Interest \\ Areas};
+
+  \node (bigdata) [satellite, above=-0.7cm of interests, fill=gray!30] {\textbf{Big/Fast Data} \\ \textbf{\& Streaming}};
+  \node (blockchain) [satellite, right=-0.7cm of interests, fill=blue!30] {\textbf{DLTs/} \\ \textbf{Blockchain,} \\ \textbf{Web3}};
+  \node (fp) [satellite, below=-0.7cm of interests] {\textbf{Functional} \\ \textbf{Programming}};
+  \node (ai) [satellite, left=-0.7cm of interests, fill=yellow!30] {\textbf{Artificial} \\ \textbf{Intelligence}};
+
+  \node (unison) [satchild] at ($(fp) + (205:1.4cm)$) {\hrefcol[violet]{https://www.unison-lang.org/docs/the-big-idea/}{\dashuline{Unison}}};
+  \node (unison) [satchild] at ($(fp) + (-25:1.4cm)$) {\hrefcol[violet]{https://zio.dev/}{\dashuline{ZIO}},\\ \hrefcol[violet]{https://getkyo.io}{\dashuline{Kyo}}};
+  \node (unison) [satchild, below=-4mm of fp] {Effect,\\ systems};
+\end{tikzpicture}
 
 \end{center}
 \end{metasection}
@@ -710,7 +733,7 @@ Perl &
 %	ARTIFICIAL FOOTER (fancy footer cannot exceed linewidth)
 %--------------------------------------------------------------------------------------------------
 
-\vspace{-4pt}
+\vspace{-3pt}
 \hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{
   \mystrut \small \textcolor{white}{
     ~~~\LaTeX~source of this \textit{résumé} is available at

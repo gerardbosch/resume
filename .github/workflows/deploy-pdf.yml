@@ -1,9 +1,6 @@
-# This is a basic workflow to help you get started with Actions
+name: Deploy PDF
 
-name: Build LaTeX and deploy PDF
-
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the main branch
+# Controls when the action will run
 on:
   push:
     branches:
@@ -12,31 +9,34 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  compile:
+    uses: ./.github/workflows/compile.yml
+
+  deploy:
     runs-on: ubuntu-latest
+    needs: compile
 
     steps:
-      - name: ⬇️  Checkout
-        uses: actions/checkout@v2
+      - name: 🔽 Checkout
+        uses: actions/checkout@v3
         with:
           submodules: recursive       # { false, true, recursive } default: false
 
-      - name: 🔨  Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: main.tex
-          latexmk_use_lualatex: true
-          post_compile: mv main.pdf deploy/
-
-      - name: 📝  Fill measurement-id placeholder
+      - name: 📝 Fill measurement-id placeholder
         run: sed -i 's/${MEASUREMENT_ID}/${{ secrets.MEASUREMENT_ID }}/g' deploy/index.html
 
-      - name: 💉  Inject dynamic data unlocker script
+      - name: 💉 Inject dynamic data unlocker script
         run: |
           echo "::add-mask::${{ secrets.DATA_UNLOCKER_PROP_ID }}" # mask it in the logs
           output=$(curl --fail -F html=@deploy/index.html 'https://api.dataunlocker.com/properties/${{ secrets.DATA_UNLOCKER_PROP_ID }}/scripts/latest/inject') && echo "$output" > deploy/index.html || echo "Failed to inject DataUnlocker's script"
 
-      - name: 🚀  Deploy
+      - name: ⬇️ Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: pdf
+          path: deploy
+
+      - name: 🚀 Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
           branch: gh-pages # The branch the action should deploy to.

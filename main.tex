@@ -670,6 +670,7 @@ Perl &
 \begin{metasection}{In graphics...}
 \begin{center}
 
+\vspace{1ex}
 \smartdiagramset{
     bubble center node font = \footnotesize,
     bubble node font = \footnotesize,
@@ -702,22 +703,23 @@ Perl &
     API\\ security
 }
 
-\vspace{2ex}
+\vspace{3ex}
 \begin{tikzpicture}
   % Define styles for the nodes: planet, satellite, satchild
   \tikzstyle{planet}=[circle, fill=orange, minimum size=3.2cm, align=center]
-  \tikzstyle{satellite}=[circle, draw, fill=green!40, minimum size=1.3cm, align=center, opacity=0.7, font=\footnotesize, postaction={draw=white, line width=1.5pt, opacity=1}]
+  \tikzstyle{satellite}=[circle, draw, fill=green!40, minimum size=1.85cm, inner sep=0pt, align=center, opacity=0.7, font=\footnotesize, postaction={draw=white, line width=1.5pt, opacity=1}]
   \tikzstyle{satchild}=[circle, draw, fill=green!25, minimum size=0.7cm, align=center, opacity=0.7, font=\footnotesize, postaction={draw=white, line width=1pt, opacity=1}]
 
   \node (interests) [planet] {Interest \\ Areas};
 
-  \node (bigdata) [satellite, above=-0.7cm of interests, fill=gray!30] {\textbf{Big/Fast Data} \\ \textbf{\& Streaming}};
-  \node (blockchain) [satellite, right=-0.7cm of interests, fill=blue!30] {\textbf{DLTs/} \\ \textbf{Blockchain,} \\ \textbf{Web3}};
-  \node (fp) [satellite, below=-0.7cm of interests] {\textbf{Functional} \\ \textbf{Programming}};
-  \node (ai) [satellite, left=-0.7cm of interests, fill=yellow!30] {\textbf{Artificial} \\ \textbf{Intelligence}};
+  \node (bigdata) [satellite, fill=gray!30] at ($(interests)+(-18:2cm)$) {\scriptsize{\textbf{Big/Fast Data}} \\ \scriptsize{\textbf{\& Streaming,}} \\ \scriptsize{\textbf{Event-Driven}}};
+  \node (blockchain) [satellite, fill=blue!30] at ($(interests)+(54:2cm)$) {\textbf{DLTs/} \\ \textbf{Blockchain,} \\ \textbf{Web3}};
+  \node (ai) [satellite, fill=yellow!30] at ($(interests)+(126:2cm)$) {\textbf{Artificial} \\ \textbf{Intelligence}};
+  \node (wasm) [satellite, fill=cyan!30] at ($(interests)+(198:2cm)$) {\scriptsize{\textbf{WebAssembly}} \\ \textbf{(Wasm)}};
+  \node (fp) [satellite] at ($(interests)+(270:2cm)$) {\textbf{Functional} \\ \textbf{Programming}};
 
-  \node (unison) [satchild] at ($(fp) + (205:1.4cm)$) {\hrefcol[violet]{https://www.unison-lang.org/docs/the-big-idea/}{\dashuline{Unison}}};
-  \node (zio) [satchild] at ($(fp) + (-25:1.4cm)$) {\hrefcol[violet]{https://zio.dev/}{\dashuline{ZIO}},\\ \hrefcol[violet]{https://getkyo.io}{\dashuline{Kyo}}};
+  \node (unison) [satchild] at ($(fp)+(205:1.4cm)$) {\hrefcol[violet]{https://www.unison-lang.org/docs/the-big-idea/}{\dashuline{Unison}}};
+  \node (zio) [satchild] at ($(fp)+(-25:1.4cm)$) {\hrefcol[violet]{https://zio.dev/}{\dashuline{ZIO}},\\ \hrefcol[violet]{https://getkyo.io}{\dashuline{Kyo}}};
   \node (effectsystems) [satchild, below=-4mm of fp] {Effect\\ systems};
 \end{tikzpicture}
 

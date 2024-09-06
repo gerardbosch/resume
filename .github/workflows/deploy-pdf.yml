@@ -31,7 +31,7 @@ jobs:
           output=$(curl --fail -F html=@deploy/index.html 'https://api.dataunlocker.com/properties/${{ secrets.DATA_UNLOCKER_PROP_ID }}/scripts/latest/inject') && echo "$output" > deploy/index.html || echo "Failed to inject DataUnlocker's script"
 
       - name: ⬇️ Download artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: pdf
           path: deploy

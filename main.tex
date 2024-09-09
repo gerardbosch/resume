@@ -325,6 +325,14 @@
 	#2
 }
 
+% Macro for impact generated 🎯
+\newcommand{\cvimpact}[1]{
+  \parbox{\mpwidth}{
+    \emoji{bullseye} \emph{#1}
+  }
+  \vspace{5pt}
+}
+
 %----------------------------------------------------------------------------------------
 % CUSTOM STRUT FOR EMPTY BOXES
 %----------------------------------------- -----------------------------------------------
@@ -492,7 +500,10 @@
 
 
 \cvposition{2022--2023}{Software Engineer}{Self employed}
-\emoji{bullseye} \emph{I set up my own company to provide software engineering services as a contractor.} \vspace{3pt}
+
+\cvimpact{
+  I set up my own company to provide software engineering services as a contractor.
+}
 
 \cventry{
   Algorithmic trading, research, design \& implementation of a risk management system for loss control, as well as key metrics collection/reporting using DDD \& Hexagonal arch.
@@ -511,7 +522,10 @@
 
 
 \cvposition{2021--2022}{Software Engineer}{N26 Bank}
-\emoji{bullseye} \emph{I contributed to streamline the processing of banking fees with the goal of having a more centralized and well-defined domain for charging fees.} \vspace{3pt}
+
+\cvimpact{
+  I contributed to streamline the processing of banking fees with the goal of having a more centralized and well-defined domain for charging fees.
+}
 
 \cventry{
   Joined the Memberships team, which was in charge of designing and operating a new fee platform intended to be the new-standardized way of charging company-wide banking fees. That implied the creation of a dedicated microservice, repurposing and refactoring of existent ones (by DDD/CleanArch), along with APIs, as well as DB migrations.
@@ -526,8 +540,12 @@
 
 
 \cvposition{2016--2021}{Senior Software Engineer}{GFT IT Consulting}
+
 % ~~PROJECT HIGHLIGHTS (most relevant ones):
-\emoji{bullseye} \emph{Successfully delivered a large and complex regulatory banking project to provide external, permission-based access to banking APIs, ensuring on-time completion. Then, I was called to contribute building a new bank architecture for high-concurrency, based on acquired know-how.} \\[-1.8ex]
+
+\cvimpact{
+  Successfully delivered a large and complex regulatory banking project to provide external, permission-based access to banking APIs, ensuring on-time completion. Then, I was called to contribute building a new bank architecture for high-concurrency, based on acquired know-how.
+}
 
 \cventry{
   \textit{Banc Sabadell}: \textbf{Middleware Architecture} (2020--2021) -- Redefine from scratch a whole new framework and development environment based on MsA, Spring Boot, API-First, Event Driven, DDD, Hexagonal and so forth -- \textbf{Role}: Software Engineer.

@@ -745,7 +745,7 @@ Perl &
   % Define styles for the nodes: planet, satellite, satchild
   \tikzstyle{planet}=[circle, fill=orange, minimum size=3.2cm, align=center]
   \tikzstyle{satellite}=[circle, draw, fill=green!40, minimum size=1.85cm, inner sep=0pt, align=center, opacity=0.7, font=\footnotesize, postaction={draw=white, line width=1.5pt, opacity=1}]
-  \tikzstyle{satchild}=[circle, draw, fill=green!25, minimum size=0.7cm, align=center, opacity=0.7, font=\footnotesize, postaction={draw=white, line width=1pt, opacity=1}]
+  \tikzstyle{satchild}=[circle, draw, fill=green!25, minimum size=0.7cm, inner sep=3pt, align=center, opacity=0.7, font=\footnotesize, postaction={draw=white, line width=1pt, opacity=1}]
 
   \node (interests) [planet] {Interest \\ Areas};
 
@@ -756,8 +756,13 @@ Perl &
   \node (fp) [satellite] at ($(interests)+(270:2cm)$) {\textbf{Functional} \\ \textbf{Programming}};
 
   \node (unison) [satchild] at ($(fp)+(205:1.4cm)$) {\hrefcol[violet]{https://www.unison-lang.org/docs/the-big-idea/}{\dashuline{Unison}}};
-  \node (zio) [satchild] at ($(fp)+(-25:1.4cm)$) {\hrefcol[violet]{https://zio.dev/}{\dashuline{ZIO}},\\ \hrefcol[violet]{https://getkyo.io}{\dashuline{Kyo}}};
-  \node (effectsystems) [satchild, below=-4mm of fp] {Effect\\ systems};
+
+  \node (zio) [satchild] at ($(fp)+(-25:1.5cm)$) {
+    \hrefcol[violet]{https://zio.dev/}{\dashuline{ZIO}},\\
+    \hrefcol[violet]{https://getkyo.io}{\dashuline{Kyo}},
+    \hrefcol[violet]{https://ox.softwaremill.com}{\dashuline{Ox}}
+  };
+  \node (effectsystems) [satchild] at ($(fp)+(270:1.4cm)$) {Effect\\ systems};
 \end{tikzpicture}
 
 \end{center}

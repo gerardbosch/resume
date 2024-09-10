@@ -432,34 +432,38 @@
 %	HEADER IMAGE / BANNER
 %----------------------------------------------------------------------------------------
 
-% \includegraphics[trim=0 30 0 10, clip, width=\linewidth]{header-mountain.jpg} % Galicia
-\includegraphics[trim=20 25 0 98, clip, width=1.3\linewidth]{header-flatiron.jpg} % Flatiron NY
+\begin{minipage}[b][45mm][t]{\linewidth} % Fixed-size container
+  \begin{tikzpicture}[remember picture, overlay]
+
+    % Background image
+    \node[anchor=north west, inner sep=0] at (0,0) {
+      % \includegraphics[trim=0 30 0 10, clip, width=\linewidth]{header-mountain_75.jpg} % Galicia
+      \includegraphics[trim=20 25 0 98, clip, width=1.3\linewidth]{header-flatiron_75.jpg} % Flatiron NY
+    };
+
+    % Color box node relative to the minipage top left
+    \node[anchor=north west, fill=introcolor, inner sep=6pt, opacity=0.85, text opacity=1, text width=79mm, align=center] at (50.5mm, -5mm) {
+      \setlength{\spaceskip}{2pt} % compact text a little
+
+      \larrow{sectcol}\textcolor{white}{
+        Enthusiast about Functional Programming, software engineering/craftsmanship, clean code, architectural/ design patterns and programming languages theory.
+      }
+
+      \vspace{8pt}
+      \larrow{sectcol}\textcolor{white}{
+        Good at identifying inefficiencies, \textcolor{Gold1}{finding solutions} and \textcolor{Gold1}{improving processes}. I enjoy collaborating with diverse teams to solve challenging problems.
+      }
+      \vspace{1pt}
+    };
+  \end{tikzpicture}
+\end{minipage}
 
 
 %---------------------------------------------------------------------------------------
 %	INTRODUCTION
 %----------------------------------------------------------------------------------------
-\transparent{0.85}%
-\vspace{-113pt}
-\hspace{0.36\linewidth}
-\newlength{\intropadding}\setlength{\intropadding}{6pt} % color box padding
-\colorbox{introcolor}{%
-  \parbox{0.59\linewidth}{%
-    \vspace{\intropadding}
-    \transparent{1}%
-    \centering
-    \larrow{sectcol}\textcolor{white}{%
-      Enthusiast about Functional Programming, software engineering/craftsmanship, clean code, architectural/ design patterns and programming languages theory.
-    }
-        
-    \vspace{8pt}
-    \larrow{sectcol}\textcolor{white}{%
-      Good at identifying inefficiencies, \textcolor{Gold1}{finding solutions} and \textcolor{Gold1}{improving processes}. I enjoy collaborating with diverse teams to solve challenging problems.
-    }
-    \vspace{\intropadding}
-  }
-}
-\vspace{16.5pt}
+
+\transparent{0.85} % this transparency makes everything more lightweight and kind, specially big paragraphs :)
 
 %============================================================================%
 %

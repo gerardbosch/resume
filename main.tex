@@ -439,7 +439,7 @@
     \tikzstyle{introcard}=
         [ anchor=north west, inner sep=4pt
         , text width=79mm, align=center
-        , rounded corners=6pt
+        , rounded corners=5pt
         , opacity=0.82, text opacity=1
         , left color=introcolor, right color=introcolor!62!white, text=white
         % , right color=introcolor, left color=introcolor!58!white, text=white
@@ -457,14 +457,14 @@
       \setlength{\spaceskip}{2pt} % compact text a little
 
       \larrow{sectcol}
-        Enthusiast about Functional Programming, software engineering/craftsmanship, clean code, architectural/ design patterns and programming languages theory.
+      Enthusiast about Functional Programming, software engineering/craftsmanship, clean code, architectural/ design patterns and programming languages theory.\vspace{1pt}
     };
 
     % Color box node relative to the minipage top left
     \node[introcard] at (51mm, -25mm) {
       \setlength{\spaceskip}{2pt} % compact text a little
 
-      \larrow{sectcol}{% keep block here `{` - better text arrangement
+      \larrow{sectcol}{% keep block here `{` and end vspace => better text arrangement
         Good at identifying inefficiencies, \textcolor{Gold1}{finding solutions} and \textcolor{Gold1}{improving processes}. I enjoy collaborating with diverse teams to solve challenging problems.
       }
       \vspace{1pt}

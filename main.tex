@@ -219,8 +219,8 @@
 % param1: fill color
 %
 \newcommand{\larrow}[1]
-{\begin{tikzpicture}[scale=0.58]
-	 \filldraw[fill=#1!100,draw=#1!100!black]  \tzlarrow
+{\begin{tikzpicture}[scale=0.58, every path/.style={rounded corners=0pt}] % reset style to avoid inherited rounded from outer tikzpicture
+	\filldraw[fill=#1!100,draw=#1!100!black]  \tzlarrow
  \end{tikzpicture}
 }
 

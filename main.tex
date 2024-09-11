@@ -276,7 +276,7 @@
 % arg2: position
 % arg3: company
 \newcommand{\cvposition}[3]{
-  \begin{tabular*}{1\mpwidth}{p{0.45\mpwidth}  x{0.52\mpwidth}}
+  \begin{tabular*}{1\mpwidth}{@{\hskip 1pt} p{0.46\mpwidth}  x{0.52\mpwidth}}
     \textcolor{black}{\textbf{#2}} & \textcolor{complcol}{#3}, \textcolor{gray}{#1}
   \end{tabular*}
   \textcolor{softcol}{\hrule}
@@ -510,7 +510,8 @@
 
 % New custom commands below :)
 
-\textbf{~~Presentations} \\[-2ex] \textcolor{softcol}{\hrule}\vspace{6pt}
+\hspace{1pt}\textbf{Presentations} \\[-2ex] \textcolor{softcol}{\hrule}\vspace{6pt}
+
 \begin{tabular}{cl}
     2020 & \href{https://bit.ly/fp-short-intro}{Functional Programming super-short intro} \\
     2018 & \href{https://blockchain-presentation.gerardbosch.xyz}{A technical introduction to Blockchain technology} \\

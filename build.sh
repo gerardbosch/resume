@@ -11,6 +11,7 @@ set -e
 # Extract Docker image from the GitHub workflow to avoid inconsistencies
 DOCKER_IMAGE=$(grep -oP "docker_image:\s*'\K[^']+" '.github/workflows/compile.yml')
 
+echo "Using Docker image: ${DOCKER_IMAGE}"
 mkdir -p build
 
 # Compile the LaTeX document

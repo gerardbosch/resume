@@ -758,24 +758,25 @@ Perl &
   % Define styles for the nodes: planet, satellite, satchild
   \tikzstyle{planet}=[circle, fill=orange, minimum size=3.2cm, align=center]
   \tikzstyle{satellite}=[circle, draw, fill=green!40, minimum size=1.85cm, inner sep=0pt, align=center, opacity=0.7, font=\footnotesize, postaction={draw=white, line width=1.5pt, opacity=1}]
-  \tikzstyle{satchild}=[circle, draw, fill=green!25, minimum size=0.7cm, inner sep=3pt, align=center, opacity=0.7, font=\footnotesize, postaction={draw=white, line width=1pt, opacity=1}]
+  \tikzstyle{satchild}=[circle, draw, fill=green!20, minimum size=0.7cm, inner sep=3pt, align=center, opacity=0.7, font=\footnotesize, postaction={draw=white, line width=1pt, opacity=1}]
 
   \node (interests) [planet] {Interest \\ Areas};
 
-  \node (bigdata) [satellite, fill=gray!30] at ($(interests)+(-18:2cm)$) {\scriptsize{\textbf{Big/Fast Data}} \\ \scriptsize{\textbf{\& Streaming,}} \\ \scriptsize{\textbf{Event-Driven}}};
-  \node (blockchain) [satellite, fill=blue!30] at ($(interests)+(54:2cm)$) {\textbf{DLTs/} \\ \textbf{Blockchain,} \\ \textbf{Web3}};
-  \node (ai) [satellite, fill=yellow!30] at ($(interests)+(126:2cm)$) {\textbf{Artificial} \\ \textbf{Intelligence}};
-  \node (wasm) [satellite, fill=cyan!30] at ($(interests)+(198:2cm)$) {\scriptsize{\textbf{WebAssembly}} \\ \textbf{(Wasm)}};
-  \node (fp) [satellite] at ($(interests)+(270:2cm)$) {\textbf{Functional} \\ \textbf{Programming}};
+  \node (ai) [satellite, fill=yellow!30] at ($(interests)+(30:2.2cm)$) {\textbf{Artificial} \\ \textbf{Intelligence}};
+  \node (blockchain) [satellite, fill=blue!30] at ($(interests)+(90:2.2cm)$) {\textbf{DLTs/} \\ \textbf{Blockchain,} \\ \textbf{Web3}};  
+  \node (wasm) [satellite, fill=cyan!30] at ($(interests)+(150:2.2cm)$) {\scriptsize{\textbf{WebAssembly}} \\ \textbf{(Wasm)}};
+  \node (durable) [satellite, fill=Plum2!30] at ($(interests)+(210:2.2cm)$) {\hrefcol[violet]{https://www.golem.cloud/post/what-is-durable-computing}{\parbox{1.4cm}{\centering \dashuline{\bfseries Durable\\\bfseries Computing}}}};
+  \node (fp) [satellite, fill=green!40] at ($(interests)+(270:2.2cm)$) {\textbf{Functional} \\ \textbf{Programming}};
 
-  \node (unison) [satchild] at ($(fp)+(205:1.4cm)$) {\hrefcol[violet]{https://www.unison-lang.org/docs/the-big-idea/}{\dashuline{Unison}}};
-
-  \node (zio) [satchild] at ($(fp)+(-25:1.5cm)$) {
+  \node (unison) [satchild] at ($(fp)+(215:1.4cm)$) {\hrefcol[violet]{https://www.unison-lang.org/docs/the-big-idea/}{\dashuline{Unison}}};
+  \node (effectsystems) [satchild] at ($(fp)+(270:1.4cm)$) {Effect\\ systems};
+  \node (zio) [satchild] at ($(fp)+(325:1.5cm)$) {
     \hrefcol[violet]{https://zio.dev/}{\dashuline{ZIO}},\\
     \hrefcol[violet]{https://getkyo.io}{\dashuline{Kyo}},
     \hrefcol[violet]{https://ox.softwaremill.com}{\dashuline{Ox}}
   };
-  \node (effectsystems) [satchild] at ($(fp)+(270:1.4cm)$) {Effect\\ systems};
+
+  \node (bigdata) [satellite, fill=gray!30] at ($(interests)+(330:2.2cm)$) {\scriptsize{\textbf{Big/Fast Data}} \\ \scriptsize{\textbf{\& Streaming,}} \\ \scriptsize{\textbf{Event-Driven}}};
 \end{tikzpicture}
 
 \end{center}

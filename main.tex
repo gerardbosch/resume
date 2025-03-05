@@ -68,7 +68,7 @@
 %\usepackage{showframe}
 
 % define page size and styles using geometry
-\usepackage[paperheight=359mm, paperwidth=210mm]{geometry} % [a4paper] [heightrounded]???
+\usepackage[paperheight=421.5mm, paperwidth=230mm]{geometry} % [a4paper] [heightrounded]???
 
 % for example, change the margins to 2 inches all round
 \geometry{top=0.8cm, bottom=-.6cm, left=0.4cm, right=1cm}
@@ -411,7 +411,7 @@
 %============================================================================
 
 \begin{document}
-\fcolorbox{white}{white}{\begin{minipage}[b][0.969\textheight][t]{0.69\linewidth}
+\fcolorbox{white}{white}{\begin{minipage}[b][0.974\textheight][t]{0.71\linewidth}
 
 
 %---------------------------------------------------------------------------------------
@@ -453,7 +453,7 @@
     };
 
     % Color box node relative to the minipage top left
-    \node[introcard] at (51mm, -6mm) {
+    \node[introcard] at (68mm, -6mm) {
       \setlength{\spaceskip}{2pt} % compact text a little
 
       \larrow{sectcol}
@@ -461,7 +461,7 @@
     };
 
     % Color box node relative to the minipage top left
-    \node[introcard] at (51mm, -25mm) {
+    \node[introcard] at (68mm, -25mm) {
       \setlength{\spaceskip}{2pt} % compact text a little
 
       \larrow{sectcol}{% keep block here `{` and end vspace => better text arrangement
@@ -510,14 +510,32 @@
 
 % New custom commands below :)
 
-\hspace{1pt}\textbf{Presentations} \\[-2ex] \textcolor{softcol}{\hrule}\vspace{6pt}
+\cvposition{2024--2025}{Software Engineer}{Tymit}
 
-\begin{tabular}{cl}
-    2020 & \href{https://bit.ly/fp-short-intro}{Functional Programming super-short intro} \\
-    2018 & \href{https://blockchain-presentation.gerardbosch.xyz}{A technical introduction to Blockchain technology} \\
-\end{tabular}\vspace{5pt}
+\cvimpact{
+  Authored an RFC with actionable proposals to align the current architecture with Clean Architecture™ \& SOLID principles, with a special focus on the Interface Segregation (ISP) and Single Responsibility Principle (SRP), plus other enhancements.
+}
 
+\cventry{
+  Worked with the integrations team to support the migration of hundreds of thousands of customers into our system while also developing new public-facing APIs to enable a new business model requiring first-party and third-party B2B backend integrations.
+}\null
 
+\cventry{
+  Improved testing reliability by introducing Property-Based Testing and showcasing its principles to the backend team, ensuring more robust testing including edge-cases.
+}\null
+
+\cventry{
+  Spearheaded API contract segregation into dedicated modules, enabling the publication of versioned API artifacts for seamless and efficient cross-service integration using Gradle, contributing to DX.
+}\null
+
+\cventry{
+  Shared coding best practices and actively contributed to code reviews and BE discussions.
+}\null
+
+% \vspace*{3pt}
+~\textbf{Stack}: \textit{Quarkus, Microservices, Reactive Programming, AWS (ECS, DynamoDB, SQS, SNS, RDS), Liquibase,\ldots}
+
+\vspace{1em}
 \cvposition{2022--2023}{Software Engineer}{Self employed}
 
 \cvimpact{
@@ -526,20 +544,17 @@
 
 \cventry{
   Algorithmic trading, research, design \& implementation of a risk management system for loss control, as well as key metrics collection/reporting using DDD \& Hexagonal arch.
-}
-\null
-\vspace{-3pt}
+}\null
+
 \cventry{
   High level design of a multi-level affiliation system with referral fee distribution.
-}
-\null
-\vspace{-7pt}
+}\null
+
 \cventry{
   Took a break to learn about finances, markets, investments and expand Fintech expertise.
-}
-\null
+}\null
 
-
+\vspace{1em}
 \cvposition{2021--2022}{Software Engineer}{N26 Bank}
 
 \cvimpact{
@@ -547,17 +562,18 @@
 }
 
 \cventry{
-  Joined the Memberships team, which was in charge of designing and operating a new fee platform intended to be the new-standardized way of charging company-wide banking fees. This involved creating a dedicated microservice, repurposing and refactoring of existent ones (by DDD/CleanArch), along with APIs, as well as DB migrations.
-}
-\null
+  Joined the Memberships team, which was in charge of designing and operating a new fee platform intended to be the new-standardized way of charging company-wide banking fees.
+}\null
+\cventry{
+  This involved creating a dedicated microservice, repurposing and refactoring of existent ones (by DDD/CleanArch), along with APIs, as well as DB migrations.
+}\null
 \cventry{
   Being a bank, testing and security were some of the most important and cared matters (pyramid testing, contract testing, regression, TDD,\ldots).
-}
+}\null
 
 \vspace*{3pt}~\textbf{Stack}: \textit{Kotlin, Spring Boot, Microservices, EDA, Kafka, REST, Postgres, Datadog, ELK, AWS,\ldots}
+
 \vspace{1em}
-
-
 \cvposition{2016--2021}{Senior Software Engineer}{GFT IT Consulting}
 
 % ~~PROJECT HIGHLIGHTS (most relevant ones):
@@ -579,17 +595,25 @@
 }
 
 
-\vspace{5pt}
+\vspace{1em}
 \cvposition{2015--2016}{Software Engineer}{ICG Software}
 
 \cventry{Developed mobile apps for retail in Android and Windows Phone platforms from scratch.}
 
-
+\vspace{1ex}
 \cvposition{2012--2013}{Researcher/developer}{AI Research Institute IIIA-CSIC}
 %~~Spanish National Research Council. Innpacto-2011 (Spanish Science and Innovation Ministry),\par\vspace{2pt}
 ~~\emph{NEWMATICA: Intelligent and Energy Efficient Advanced System for Vacuum Waste Collection}.\\[3pt]
-\cventry{Investigated Machine Learning algorithms based on \emph{Approximate Dynamic Programming} (RL).}\\[-6pt]
+\cventry{Investigated Machine Learning algorithms based on \emph{Approximate Dynamic Programming} (RL).}\\
 \cventry{Co-developed a waste collecting simulator to optimize operational plans, run simulations, collect data/process results.}
+
+\vspace{1ex}
+\hspace{1pt}\textbf{Presentations} \\[-2ex] \textcolor{softcol}{\hrule}\vspace{6pt}
+
+\begin{tabular}{cl}
+    2020 & \href{https://bit.ly/fp-short-intro}{Functional Programming super-short intro} \\
+    2018 & \href{https://blockchain-presentation.gerardbosch.xyz}{A technical introduction to Blockchain technology} \\
+\end{tabular}\vspace{5pt}
 
 
 %---------------------------------------------------------------------------------------
@@ -604,16 +628,17 @@
 % \cvposition{2010}{Bachelor Computer Science}{University of Lleida}\vspace{-2pt}
 % \cventry{Bachelor Thesis: \emph{Implementation of Golay codes in Sage Math.}}
 
+
 %---------------------------------------------------------------------------------------
 %	LIVE RESUME NOTE
 %---------------------------------------------------------------------------------------
-\vfill\vspace{3pt}
-\centerline{
-  \href{https://resume.gerardbosch.xyz}{\emoji{person-gesturing-ok} \textcolor{black}{This \emph{résumé} is \textcolor{magenta}{live!} Click here to ensure you access the most \textbf{up-to-date} version \emoji{person-gesturing-ok}}}
-}
+% \vfill\vspace{3pt}
+% \centerline{
+%   \href{https://resume.gerardbosch.xyz}{\emoji{person-gesturing-ok} \textcolor{black}{This \emph{résumé} is \textcolor{magenta}{live!} Click here to ensure you access the most \textbf{up-to-date} version \emoji{person-gesturing-ok}}}
+% }
 
 \end{minipage}}%
-\fcolorbox{white}{sidecolor}{\begin{minipage}[b][0.969\textheight][t]{0.33\linewidth}
+\fcolorbox{white}{sidecolor}{\begin{minipage}[b][0.974\textheight][t]{0.31\linewidth}
 
 
 %----------------------------------------------------------------------------------------
@@ -638,20 +663,20 @@
 \vspace{5pt}
 \begin{tabular}{rl}
 
+Scala 3 &
+\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{white}\icon{star}{12}{white} \\[2pt]
+  
 Kotlin &
 \icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{white} \\[2pt]
 
 Java 23 &
 \icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol} \\[2pt]
 
-Scala 3 &
-\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{white}\icon{star}{12}{white} \\[2pt]
+Haskell &
+\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{white}\icon{star}{12}{white}\icon{star}{12}{white} \\[2pt]
 
 Bash &
 \icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{white} \\[2pt]
-
-Haskell &
-\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{white}\icon{star}{12}{white}\icon{star}{12}{white} \\[2pt]
 
 Python &
 \icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{white}\icon{star}{12}{white} \\[2pt]
@@ -693,6 +718,8 @@ Perl &
 \vspace{-0.3cm}
 \begin{metasection}{Tools}
 
+\icontext{code}{12}{Property-Based Testing (PBT)}{white} \\[5pt]
+\icontext{code}{12}{Mutation Testing}{white} \\[5pt]
 \icontext{code}{12}{IntelliJ / VSCode / vim :)}{white} \\[5pt]
 \icontext{github}{12}{GitHub Actions}{white} \icontext{gitlab}{12}{GitLab CI}{white} \icontext{jenkins}{12}{Jenkins}{white} \\[5pt]
 \icontext{code-branch}{12}{Git}{white}~ \icontext{terminal}{12}{ZSH}{white}~ \icontext{comment}{12}{Codestream}{white} \\[5pt]
@@ -798,7 +825,7 @@ Perl &
 \vspace{-3pt}
 \hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{
   \mystrut \small \textcolor{white}{
-    \hspace{9pt}\LaTeX~source of this \textit{résumé} is available at {\normalsize\faGithub}~\href{https://github.com/gerardbosch/resume}{\color{white}{github.com/gerardbosch/resume}}~$\cdot$~Built/Delivered by GH Actions/Cloudflare~$\cdot$~Last updated: \today
+    \hspace{9pt}\LaTeX~source of this \textit{résumé} is available at {\normalsize\faGithub}~\href{https://github.com/gerardbosch/resume}{\color{white}{github.com/gerardbosch/resume}}~$\cdot$~Built/Delivered by GH Actions/Cloudflare~$\cdot$~Last updated: February 25, 2025
   }
 }}
 

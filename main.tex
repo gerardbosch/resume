@@ -67,8 +67,9 @@
 %debug page outer frames
 %\usepackage{showframe}
 
+% ADJUST PAGESIZE
 % define page size and styles using geometry
-\usepackage[paperheight=359mm, paperwidth=210mm]{geometry} % [a4paper] [heightrounded]???
+\usepackage[paperheight=442.5mm, paperwidth=230mm]{geometry} % [a4paper] [heightrounded]???
 
 % for example, change the margins to 2 inches all round
 \geometry{top=0.8cm, bottom=-.6cm, left=0.4cm, right=1cm}
@@ -276,7 +277,7 @@
 % arg2: position
 % arg3: company
 \newcommand{\cvposition}[3]{
-  \begin{tabular*}{1\mpwidth}{@{\hskip 1pt} p{0.465\mpwidth}  x{0.52\mpwidth}}
+  \begin{tabular*}{1\mpwidth}{@{\hskip 1pt} p{0.575\mpwidth}  x{0.41\mpwidth}}
     \textcolor{black}{\textbf{#2}} & \textcolor{complcol}{#3}, \textcolor{gray}{#1}
   \end{tabular*}
   \textcolor{softcol}{\hrule}
@@ -411,7 +412,7 @@
 %============================================================================
 
 \begin{document}
-\fcolorbox{white}{white}{\begin{minipage}[b][0.969\textheight][t]{0.69\linewidth}
+\fcolorbox{white}{white}{\begin{minipage}[b][0.974\textheight][t]{0.71\linewidth}
 
 
 %---------------------------------------------------------------------------------------
@@ -453,7 +454,7 @@
     };
 
     % Color box node relative to the minipage top left
-    \node[introcard] at (51mm, -6mm) {
+    \node[introcard] at (68mm, -6mm) {
       \setlength{\spaceskip}{2pt} % compact text a little
 
       \larrow{sectcol}
@@ -461,7 +462,7 @@
     };
 
     % Color box node relative to the minipage top left
-    \node[introcard] at (51mm, -25mm) {
+    \node[introcard] at (68mm, -25mm) {
       \setlength{\spaceskip}{2pt} % compact text a little
 
       \larrow{sectcol}{% keep block here `{` and end vspace => better text arrangement
@@ -494,7 +495,7 @@
 
 \vspace{12pt}
 \parbox{\mpwidth}{{\small
-  My background is mostly about designing/implementing backend systems and APIs. Skilled in analyzing requirements and translating them into code. Focused on code readability, expressiveness, precision, and conciseness. Committed to continuous improvement \& continuous refactor and code reuse as a mantra. Accidental-complexity fighter. Curious by nature, proactive and self-taught. Like learning~\emoji{smiley}, love crafting \emoji{heart}.
+  With a keen interest in Scala and other modern functional languages, my background is mostly about designing/implementing backend systems and APIs. Skilled in analyzing requirements and translating them into code. Focused on code readability, expressiveness, precision, conciseness, and correctness. Committed to continuous improvement \& continuous refactor and code reuse as a mantra. Accidental-complexity fighter. Curious by nature, proactive and self-taught. I enjoy contributing to developer experience and building products. Like learning~\emoji{smiley}, love crafting \emoji{heart}.
 }}
 
 \vspace{12pt}
@@ -510,15 +511,34 @@
 
 % New custom commands below :)
 
-\hspace{1pt}\textbf{Presentations} \\[-2ex] \textcolor{softcol}{\hrule}\vspace{6pt}
+\cvposition{2024--2025}{Backend Software Engineer | Quarkus, Reactive}{Tymit}
 
-\begin{tabular}{cl}
-    2020 & \href{https://bit.ly/fp-short-intro}{Functional Programming super-short intro} \\
-    2018 & \href{https://blockchain-presentation.gerardbosch.xyz}{A technical introduction to Blockchain technology} \\
-\end{tabular}\vspace{5pt}
+\cvimpact{
+  Authored an RFC with actionable proposals to align the current architecture with Clean Architecture™ \& SOLID principles, with a special focus on the Interface Segregation (ISP) and Single Responsibility Principle (SRP), plus other enhancements.
+}
 
+\cventry{
+  Engaged with the integrations team to support the migration of hundreds of thousands of customers into our system, while also developing new public-facing APIs to enable a new business model requiring first-party and third-party B2B backend integrations.
+}
+\null
+\cventry{
+  Improved testing reliability by introducing Property-Based Testing and showcasing its principles to the backend team, ensuring more robust testing including edge-cases, generating thousands of test values.
+}
+\null
+\cventry{
+  Spearheaded API contract segregation into dedicated modules, enabling the publication of versioned API artifacts for seamless and efficient cross-service integration using Gradle, contributing to DX.
+}
+\null
+\cventry{
+  Shared coding best practices and actively contributed to code reviews and BE discussions.
+}
+\null
 
-\cvposition{2022--2023}{Software Engineer}{Self employed}
+% \vspace*{3pt}
+~\textbf{Stack}: \textit{Quarkus, Microservices, Reactive Programming, AWS (ECS, DynamoDB, SQS, SNS, RDS), Liquibase,\ldots}
+
+\vspace{1em}
+\cvposition{2022--2023}{Software Engineer | C++, MQL}{Self employed}
 
 \cvimpact{
   Established my own company to provide software engineering services as a contractor.
@@ -528,68 +548,88 @@
   Algorithmic trading, research, design \& implementation of a risk management system for loss control, as well as key metrics collection/reporting using DDD \& Hexagonal arch.
 }
 \null
-\vspace{-3pt}
 \cventry{
   High level design of a multi-level affiliation system with referral fee distribution.
 }
 \null
-\vspace{-7pt}
 \cventry{
   Took a break to learn about finances, markets, investments and expand Fintech expertise.
 }
 \null
 
-
-\cvposition{2021--2022}{Software Engineer}{N26 Bank}
+\vspace{1em}
+\cvposition{2021--2022}{Software Engineer | Spring Boot, Kotlin}{N26 Bank}
 
 \cvimpact{
   Collaborated to streamlining the processing of banking fees with the goal of having a more centralized and clear domain boundaries for charging fees.
 }
 
 \cventry{
-  Joined the Memberships team, which was in charge of designing and operating a new fee platform intended to be the new-standardized way of charging company-wide banking fees. This involved creating a dedicated microservice, repurposing and refactoring of existent ones (by DDD/CleanArch), along with APIs, as well as DB migrations.
-}
-\null
+  Joined the Memberships team, which was in charge of designing and operating a new fee platform intended to be the new-standardized way of charging company-wide banking fees.
+}\null
+\cventry{
+  This involved creating a dedicated microservice, repurposing and refactoring of existent ones (by DDD/CleanArch), along with APIs, as well as DB migrations.
+}\null
 \cventry{
   Being a bank, testing and security were some of the most important and cared matters (pyramid testing, contract testing, regression, TDD,\ldots).
-}
+}\null
 
 \vspace*{3pt}~\textbf{Stack}: \textit{Kotlin, Spring Boot, Microservices, EDA, Kafka, REST, Postgres, Datadog, ELK, AWS,\ldots}
+
 \vspace{1em}
-
-
-\cvposition{2016--2021}{Senior Software Engineer}{GFT IT Consulting}
+\cvposition{2016--2021}{Senior Software Engineer | Spring Boot, Java}{GFT IT Consulting}
 
 % ~~PROJECT HIGHLIGHTS (most relevant ones):
 
 \cvimpact{
-  Successfully delivered a large and complex regulatory banking project to provide external, permission-based access to banking APIs, ensuring on-time completion. Then, I was called to contribute building a new bank architecture for high-concurrency, based on acquired know-how.
+  Successfully delivered a large and complex regulatory banking project to provide external, permission-based access to banking APIs, ensuring on-time completion. Then, was called to contribute to building a new bank architecture for high-concurrency from the acquired know-how.
 }
 
 \cventry{
-  \textit{Banc Sabadell}: \textbf{Middleware Architecture} (2020--2021) -- Redefine from scratch a whole new framework and development environment based on MsA, Spring Boot, API-First, Event Driven, DDD, Hexagonal and so forth -- \textbf{Role}: Software Engineer.
+  \textit{Banc Sabadell}: \textbf{Middleware Architecture} (2020--2021) --
+  Redefine from scratch a whole new framework and development environment based on MsA, Spring Boot, API-First, Event Driven, DDD, Hexagonal, and using OKR project framework
+  -- \textbf{Role}: Software Engineer.
 }
 \null
 \cventry{
-  \textit{Banc Sabadell}: \textbf{PSD2 \& APIfication} (2018--2020) -- Design \& implement the APIs and requirements for the European \href{https://en.wikipedia.org/wiki/Payment_Services_Directive}{PSD2 regulation}; pioneering the API exposition for the Bank. Define and implement architectural components for the MsA where I was established as the technical lead for the dev team -- \textbf{Role}: Tech Lead.
+  \textit{Banc Sabadell}: \textbf{PSD2 \& APIfication} (2018--2020) --
+  Design \& implement the APIs and requirements for the European \href{https://en.wikipedia.org/wiki/Payment_Services_Directive}{PSD2 regulation}; pioneering the API exposition for the Bank.
+  Define and implement architectural components for the MsA.
+  Mentoring and onboarding new members. Got established as the technical lead for the dev team
+  -- \textbf{Role}: Tech Lead.
 }
 \null
 \cventry{
-  \textit{Bankinter}: \textbf{Microservice Architecture} (2017) -- Development of an architecture based on MsA and Spring, providing the pre-configured components: from security, tracing, audit, error handling to cryptography; enabling developers to easily get started.
+  \textit{Bankinter}: \textbf{Microservice Architecture} (2017) --
+  Development of an architecture based on MsA and Spring, providing the pre-configured components: from security, tracing, audit, error handling to cryptography; enabling developers to easily get started.
 }
 
 
-\vspace{5pt}
-\cvposition{2015--2016}{Software Engineer}{ICG Software}
+\vspace{1em}
+\cvposition{2015--2016}{Software Engineer | Mobile development}{ICG Software}
 
-\cventry{Developed mobile apps for retail in Android and Windows Phone platforms from scratch.}
+\cventry{
+  Developed a new Android-native warehouse management app, featuring barcode scanning, offline operation, an object database with Realm, and integration with the in-house developed ERP.
+}
+\null
+\cventry{
+  Successfully migrated a whole app for a franchise clothing store to native Windows Phone. Our client needed that we developed our Android app for Windows Phone, to deploy it globally on all their stores.
+}
 
-
-\cvposition{2012--2013}{Researcher/developer}{AI Research Institute IIIA-CSIC}
+\vspace{1ex}
+\cvposition{2012--2013}{Researcher/developer | Python}{AI Research Institute IIIA-CSIC}
 %~~Spanish National Research Council. Innpacto-2011 (Spanish Science and Innovation Ministry),\par\vspace{2pt}
 ~~\emph{NEWMATICA: Intelligent and Energy Efficient Advanced System for Vacuum Waste Collection}.\\[3pt]
-\cventry{Investigated Machine Learning algorithms based on \emph{Approximate Dynamic Programming} (RL).}\\[-6pt]
-\cventry{Co-developed a waste collecting simulator to optimize operational plans, run simulations, collect data/process results.}
+\cventry{Investigated Machine Learning algorithms based on \emph{Approximate Dynamic Programming} (RL).}\\
+\cventry{Co-developed a waste collecting simulator to optimize operational plans, run simulations, collect data and process results.}
+
+\vspace{1ex}
+\hspace{1pt}\textbf{Presentations} \\[-2ex] \textcolor{softcol}{\hrule}\vspace{6pt}
+
+\begin{tabular}{cl}
+    2020 & \href{https://bit.ly/fp-short-intro}{Functional Programming super-short intro} \\
+    2018 & \href{https://blockchain-presentation.gerardbosch.xyz}{A technical introduction to Blockchain technology} \\
+\end{tabular}\vspace{5pt}
 
 
 %---------------------------------------------------------------------------------------
@@ -604,16 +644,17 @@
 % \cvposition{2010}{Bachelor Computer Science}{University of Lleida}\vspace{-2pt}
 % \cventry{Bachelor Thesis: \emph{Implementation of Golay codes in Sage Math.}}
 
+
 %---------------------------------------------------------------------------------------
 %	LIVE RESUME NOTE
 %---------------------------------------------------------------------------------------
-\vfill\vspace{3pt}
-\centerline{
-  \href{https://resume.gerardbosch.xyz}{\emoji{person-gesturing-ok} \textcolor{black}{This \emph{résumé} is \textcolor{magenta}{live!} Click here to ensure you access the most \textbf{up-to-date} version \emoji{person-gesturing-ok}}}
-}
+% \vfill\vspace{3pt}
+% \centerline{
+%   \href{https://resume.gerardbosch.xyz}{\emoji{person-gesturing-ok} \textcolor{black}{This \emph{résumé} is \textcolor{magenta}{live!} Click here to ensure you access the most \textbf{up-to-date} version \emoji{person-gesturing-ok}}}
+% }
 
 \end{minipage}}%
-\fcolorbox{white}{sidecolor}{\begin{minipage}[b][0.969\textheight][t]{0.33\linewidth}
+\fcolorbox{white}{sidecolor}{\begin{minipage}[b][0.974\textheight][t]{0.31\linewidth}
 
 
 %----------------------------------------------------------------------------------------
@@ -638,20 +679,20 @@
 \vspace{5pt}
 \begin{tabular}{rl}
 
+Scala 3 &
+\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{white}\icon{star}{12}{white} \\[2pt]
+
 Kotlin &
 \icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{white} \\[2pt]
 
 Java 23 &
 \icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol} \\[2pt]
 
-Scala 3 &
-\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{white}\icon{star}{12}{white} \\[2pt]
+Haskell &
+\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{white}\icon{star}{12}{white}\icon{star}{12}{white} \\[2pt]
 
 Bash &
 \icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{white} \\[2pt]
-
-Haskell &
-\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{white}\icon{star}{12}{white}\icon{star}{12}{white} \\[2pt]
 
 Python &
 \icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{complcol}\icon{star}{12}{white}\icon{star}{12}{white} \\[2pt]
@@ -700,6 +741,23 @@ Perl &
 
 \end{metasection}
 
+
+\vspace{-0.3cm}
+\begin{metasection}{Methodologies}
+
+\begingroup\color{white}
+\begin{itemize}
+  \item Agile, OKR, SCRUM, Kanban
+  \item TDD, Property-Based Testing, Mutation Testing
+  \item Domain Driven Design, Hexagonal, Clean Architecture
+  \item API-First, OpenAPI, API Management
+  \item Microservices, Event-Driven Architecture
+  \item SOLID, Design Patterns, Refactoring,\\ eXtreme Programming
+\end{itemize}
+% eXtreme Programming, Programming with types.
+\endgroup
+\end{metasection}
+
 % \begin{metasection}{Activities}
 %
 % \textcolor{white}{\LARGE{\icon{Gamepad}{24}{white} \icon{Headphones}{24}{white}  \icon{Bicycle}{24}{white}}}
@@ -710,7 +768,6 @@ Perl &
 % \textcolor{white}{\LARGE{\icon{Linux}{24}{white} \icon{Apple}{24}{white}  \icon{Windows}{24}{white}}}
 %
 % \end{metasection}
-
 
 %---------------------------------------------------------------------------------------
 %	Knowledge Areas
@@ -798,7 +855,7 @@ Perl &
 \vspace{-3pt}
 \hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{
   \mystrut \small \textcolor{white}{
-    \hspace{9pt}\LaTeX~source of this \textit{résumé} is available at {\normalsize\faGithub}~\href{https://github.com/gerardbosch/resume}{\color{white}{github.com/gerardbosch/resume}}~$\cdot$~Built/Delivered by GH Actions/Cloudflare~$\cdot$~Last updated: \today
+    \hspace{9pt}\LaTeX~source of this \textit{résumé} is available at {\normalsize\faGithub}~\href{https://github.com/gerardbosch/resume}{\color{white}{github.com/gerardbosch/resume}}~$\cdot$~Built/Delivered by GH Actions/Cloudflare~$\cdot$~Last updated: February 25, 2025
   }
 }}
 

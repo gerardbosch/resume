@@ -69,7 +69,7 @@
 
 % ADJUST PAGE SIZE
 % define page size and styles using geometry
-\usepackage[paperheight=440.5mm, paperwidth=230mm]{geometry} % [a4paper] [heightrounded]???
+\usepackage[paperheight=501.9mm, paperwidth=230mm]{geometry} % [a4paper] [heightrounded]???
 
 % for example, change the margins to 2 inches all round
 \geometry{top=0.8cm, bottom=-.6cm, left=0.4cm, right=1cm}
@@ -511,6 +511,33 @@
 
 % New custom commands below :)
 
+\cvposition{2025--now}{Software Engineer - Messaging | Kotlin, Spring, Kafka}{Leboncoin (Adevinta)}
+
+% \cvimpact{
+%   % TODO
+% }
+
+\cventry{
+  Support the migration and handover of Adevinta’s central messaging (chat) backend platform to Leboncoin, ensuring smooth transition to full ownership and autonomy. The system supports 20M+ monthly active users, tens of millions of conversations per month, and millions of daily messages through an Event-Driven Architecture (Kafka, Kafka Streams).
+}
+\null
+\cventry{
+  Develop new features and modernize the codebase and microservices architecture to meet evolving business and system requirements, improving scalability, reliability, and maintainability.
+}
+\null
+\cventry{
+  Operate, troubleshoot, and optimize the system to ensure high availability, performance, and resilience in a large-scale distributed environment.
+}
+\null
+\cventry{
+  Bridge original and new teams, driving knowledge transfer, collaboration, and alignment for successful migration.
+}
+\null
+
+% \vspace*{3pt}
+~\textbf{Stack}: \textit{Kotlin, Spring Boot, Kafka, Kafka Streams, Kubernetes, ScyllaDB, Postgres, Clickhouse, AWS,\ldots}
+
+\vspace{1em}
 \cvposition{2024--2025}{Backend Software Engineer | Quarkus, Reactive}{Tymit}
 
 \cvimpact{
@@ -715,6 +742,8 @@ Perl &
 \icontext{cloud}{12}{Cloud-Native / AWS}{white}~
 \icontext{docker}{12}{Docker / Podman}{white} \\[5pt]
 
+\icontext{stream}{12}{Kafka, Kafka Streams}{white}~ \\[5pt]
+
 \icontext{database}{12}{SQL}{white}~
 \icontext{database}{12}{JOOQ}{white}~
 \icontext{puzzle-piece}{12}{API First \& OpenAPI}{white} \\[5pt]
@@ -853,10 +882,10 @@ Perl &
 %	ARTIFICIAL FOOTER (fancy footer cannot exceed linewidth)
 %--------------------------------------------------------------------------------------------------
 
-\vspace{-3pt}
+\vspace{2pt}
 \hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{
   \mystrut \small \textcolor{white}{
-    \hspace{9pt}\LaTeX~source of this \textit{résumé} is available at {\normalsize\faGithub}~\href{https://github.com/gerardbosch/resume}{\color{white}{github.com/gerardbosch/resume}}~$\cdot$~Built/Delivered by GH Actions/Cloudflare~$\cdot$~Last updated: February 25, 2025
+    \hspace{9pt}\LaTeX~source of this \textit{résumé} is available at {\normalsize\faGithub}~\href{https://github.com/gerardbosch/resume}{\color{white}{github.com/gerardbosch/resume}}~$\cdot$~Built/Delivered by GH Actions/Cloudflare~$\cdot$~Last updated: \today
   }
 }}
 

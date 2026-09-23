@@ -69,7 +69,7 @@
 
 % ADJUST PAGE SIZE
 % define page size and styles using geometry
-\usepackage[paperheight=520.7mm, paperwidth=230mm]{geometry} % [a4paper] [heightrounded]???
+\usepackage[paperheight=54.3cm, paperwidth=23.0cm]{geometry} % [a4paper] [heightrounded]???
 
 % for example, change the margins to 2 inches all round
 \geometry{top=0.8cm, bottom=-.6cm, left=0.4cm, right=1cm}
@@ -511,18 +511,16 @@
 
 % New custom commands below :)
 
-\cvposition{2025--now}{Senior Software Eng. in Messaging | Kotlin, Spring, Kafka}{Leboncoin (Adevinta)}
+\cvposition{2025--now}{Senior Software Engineer | Kotlin, Spring, Kafka, Go}{Leboncoin (Adevinta)}
 
-% \cvimpact{
-%   % TODO
-% }
+\textbf{Messaging team:}
+
+\cvimpact{
+  Develop an architecture from scratch based on starters, plugins, and utility libraries to serve as the umbrella for 30+ Spring Boot microservices. It allowed streamlining code, reusing components, reducing ad-hoc setup, and especially increasing consistency across services by providing a single place to distribute upgrades and configuration to the stack. It strongly contributed to harmonize code.
+}
 
 \cventry{
   Support the migration and handover of Adevinta’s central messaging (chat) backend platform to Leboncoin, ensuring smooth transition to full ownership and autonomy. The system supports 29M monthly active users, tens of millions of conversations per month, and millions of daily messages through an Event-Driven Architecture (Kafka, Kafka Streams).
-}
-\null
-\cventry{
-  Develop an architecture from scratch based on starters, plugins, and utility libraries to serve as the umbrella for 30+ Spring Boot microservices. It allowed streamlining code, reusing components, reducing ad-hoc setup, and especially increasing consistency across services by providing a single place to distribute upgrades and configuration to the stack.
 }
 \null
 \cventry{
@@ -538,8 +536,12 @@
 }
 \null
 
-% \vspace*{3pt}
-~\textbf{Stack}: \textit{Kotlin, Spring Boot, Kafka, Kafka Streams, Kubernetes, ScyllaDB, Postgres, Clickhouse, AWS,\ldots}
+\textbf{Recommendation team:}
+
+After the first year I switched to the Recommendation team to work on the Golang Backend for the Homepage \& Recommendation team which serves high-volume traffic and provides user personalized recommendations; interfacing with Frontend, ML and vector DB.
+
+\vspace*{3pt}
+\textbf{Stack}: \textit{Kotlin, Spring Boot, Kafka, Kafka Streams, Kubernetes, ScyllaDB, Postgres, Clickhouse, AWS, Milvus/Zilliz\ldots}
 
 \vspace{1em}
 \cvposition{2024--2025}{Backend Software Engineer | Quarkus, Reactive}{Tymit}
@@ -566,7 +568,7 @@
 \null
 
 % \vspace*{3pt}
-~\textbf{Stack}: \textit{Quarkus, Microservices, Reactive Programming, AWS (ECS, DynamoDB, SQS, SNS, RDS), Liquibase,\ldots}
+\textbf{Stack}: \textit{Quarkus, Microservices, Reactive Programming, AWS (ECS, DynamoDB, SQS, SNS, RDS), Liquibase,\ldots}
 
 \vspace{1em}
 \cvposition{2022--2023}{Software Engineer | C++, MQL}{Self employed}
@@ -605,7 +607,7 @@
   Being a bank, testing and security were some of the most important and cared matters (pyramid testing, contract testing, regression, TDD,\ldots).
 }\null
 
-\vspace*{3pt}~\textbf{Stack}: \textit{Kotlin, Spring Boot, Microservices, EDA, Kafka, REST, Postgres, Datadog, ELK, AWS,\ldots}
+\vspace*{3pt}\textbf{Stack}: \textit{Kotlin, Spring Boot, Microservices, EDA, Kafka, REST, Postgres, Datadog, ELK, AWS,\ldots}
 
 \vspace{1em}
 \cvposition{2016--2021}{Senior Software Engineer | Spring Boot, Java}{GFT IT Consulting}
@@ -759,8 +761,8 @@ Perl &
 \icontext{cube}{12}{Testcontainers}{white} \\[5pt]
 
 
-\icontext{gavel}{12}{Maven/Gradle/sbt}{white}~
-\icontext{life-ring}{12}{JGitVer}{white}% \\[5pt]
+\icontext{gavel}{12}{Maven/Gradle}{white}~
+% \icontext{life-ring}{12}{JGitVer}{white}% \\[5pt]
 
 \end{metasection}
 
